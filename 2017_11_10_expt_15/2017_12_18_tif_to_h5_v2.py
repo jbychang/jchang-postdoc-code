@@ -22,7 +22,8 @@ def bgSubtractAndCopy(sourceDir, targetDir):
                 print("{srcDir}"+File.separator + list[i]);
                 open("{srcDir}"+File.separator + list[i]);
                 run("Subtract Background...", "rolling=100");
-            saveAs("Tiff", "{trgtDir}"+File.separator+list[i]);
+                saveAs("Tiff", "{trgtDir}"+File.separator+list[i]);
+                run("Close All");
         }}
      }}""".format(srcDir=sourceDir, trgtDir=targetDir)
         
@@ -119,7 +120,7 @@ if __name__ == "__main__":
     wellRegExp = re.compile('[A-H]\d\d')
     subDirectories = sorted([name for name in os.listdir(directory) if os.path.isdir(os.path.join(directory, name)) & bool(wellRegExp.match(name))])
     print('all subdirectories: {}'.format(subDirectories))
-    for subDir in subDirectories[7:]:
+    for subDir in subDirectories[42:]:
         sourceDir = os.path.join(directory, subDir)
         targetDir = os.path.join(newDirectory, subDir)
         if not os.path.exists(targetDir):

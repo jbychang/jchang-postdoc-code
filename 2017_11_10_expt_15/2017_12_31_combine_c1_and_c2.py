@@ -68,6 +68,6 @@ if __name__ == "__main__":
     wellRegExp = re.compile('[A-H]\d\d')
     subDirectories = sorted([name for name in os.listdir(directory) if os.path.isdir(os.path.join(directory, name)) & bool(wellRegExp.match(name))])
     print('all subdirectories: {}'.format(subDirectories))
-    for subDir in subDirectories[0:30]:
+    for subDir in subDirectories[24:40]:
         subDirectory = os.path.join(directory, subDir)
         combineh5(subDirectory)
