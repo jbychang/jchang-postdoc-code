@@ -1,0 +1,1823 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     80099,       1815]
+NotebookOptionsPosition[     75034,       1727]
+NotebookOutlinePosition[     75383,       1742]
+CellTagsIndexPosition[     75340,       1739]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Rename files: I\[CloseCurlyQuote]ll just hard code everything.
+* There are three directories: 
+\t* 20171101_173602_204 runs from t01\[Dash]t48
+\t* 20171102_102138_867 runs from t001\[Dash]t110
+\t* 20171103_230143_752 runs from t001\[Dash]t106
+* For now, I\[CloseCurlyQuote]ll code it to rename 204 to t001\[Dash]t048; \
+867 to t049\[Dash]t158 (add 48); 752 to t159\[Dash]264 (add 158).\
+\>", "Text",
+ CellChangeTimes->{{3.7192391953830905`*^9, 3.7192391975105762`*^9}, {
+  3.719239228774452*^9, 3.7192392552859545`*^9}, {3.7192393434445705`*^9, 
+  3.719239411043816*^9}, {3.719239687568943*^9, 3.7192398957114363`*^9}, {
+  3.719257396288165*^9, 
+  3.719257410192971*^9}},ExpressionUUID->"d108e66f-818a-4b51-ae1e-\
+138ab74473a6"],
+
+Cell[TextData[StyleBox["204:",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.719240983491459*^9, 
+  3.719240984931464*^9}},ExpressionUUID->"822d3c30-2022-45c3-9b07-\
+5753b9e50b0a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\<E:\\\\temp\\\\204\\\\WellG04_Seq0037\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.719240810621389*^9, 3.719240819639456*^9}, {
+  3.719240892832096*^9, 3.719240908480035*^9}, {3.7192409545011973`*^9, 
+  3.7192409552517223`*^9}, {3.7192409932843027`*^9, 3.719241008483926*^9}, {
+  3.723702489656389*^9, 3.723702542672368*^9}, {3.723702664343958*^9, 
+  3.723702678204817*^9}},ExpressionUUID->"f7acfba0-3646-47b0-98b9-\
+9b680283d322"],
+
+Cell[BoxData["\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\"\>"], "Output",
+ CellChangeTimes->{
+  3.7192408212877903`*^9, {3.7192409481237397`*^9, 3.719240955918189*^9}, {
+   3.7192410053677473`*^9, 3.7192410089732676`*^9}, {3.723702528016697*^9, 
+   3.723702543203565*^9}, {3.7237026684212074`*^9, 
+   3.7237026784391923`*^9}},ExpressionUUID->"45446043-a561-4b86-be7f-\
+759393386be7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNames", "[", 
+  RowBox[{"\"\<*.tif\>\"", ",", "\"\<.\>\"", ",", "Infinity"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.719240968199771*^9, 3.719240972356676*^9}, {
+  3.7192411931710052`*^9, 
+  3.7192412483935995`*^9}},ExpressionUUID->"bbe1fb87-7645-45a2-aa9d-\
+8551353755f7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          
+          RowBox[{"\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t01B02_0000c1.\
+tif\"\>", 
+           ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t01B02_0001c1.tif\
+\"\>", ",", \
+"\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t02B02_0000c1.tif\"\>", ",", 
+           TemplateBox[{"17354"},
+            "OutputSizeLimit`Skeleton",
+            DisplayFunction->(FrameBox[
+              RowBox[{"\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}],
+               Background -> GrayLevel[0.75], 
+              BaseStyle -> {
+               "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                ShowStringCharacters -> False}, BaselinePosition -> Baseline, 
+              ContentPadding -> False, FrameMargins -> {{1, 1}, {1, 2}}, 
+              FrameStyle -> None, RoundingRadius -> 7]& )], 
+           ",", "\<\".\\\\WellH09_Seq0055\\\\WellH09_Seq0055t8H09_0001c3.tif\"\
+\>", ",", "\<\".\\\\WellH09_Seq0055\\\\WellH09_Seq0055t8H09_0001c4.tif\"\>", 
+           ",", "\<\".\\\\WellH09_Seq0055\\\\WellH09_Seq0055t8H09_0001c5.tif\"\
+\>"}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FEStrings", "sizeBriefExplanation"], StandardForm],
+               ImageSizeCache->{65., {3., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarCategory",
+             StripOnInput->False],
+            StyleBox[
+             DynamicBox[
+              ToBoxes[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+               StandardForm]], DynamicUpdating -> True, StripOnInput -> 
+             False]],
+           Annotation[#, 
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+             DynamicUpdating -> True], "Tooltip"]& ], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{52., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{52., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 8, 21992596962581105822, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{62., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{62., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 8, 21992596962581105822, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{44., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{44., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 8, 21992596962581105822, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{78., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{78., {1., 9.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    Background->RGBColor[0.9657, 0.9753, 0.9802],
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[8]]], "Output",
+ CellChangeTimes->{3.71924097266189*^9, 3.719241016517541*^9, 
+  3.7192419030190473`*^9},ExpressionUUID->"28cb0f20-871b-41ba-a8e5-\
+3863e157e407"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"output", " ", "=", " ", "%"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7192423731804104`*^9, 
+  3.7192423758772955`*^9}},ExpressionUUID->"94f210f3-9ea2-4bc7-a902-\
+bedcb9a122fc"],
+
+Cell[TextData[StyleBox["The following function takes in a string \
+(output[[1]]), finds the t##\[CloseCurlyDoubleQuote] portion, and spits out \
+the modified 3-digit \[OpenCurlyDoubleQuote]t###\[CloseCurlyDoubleQuote] \
+string.",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.7192492912118144`*^9, 3.7192493407954674`*^9}, {
+  3.7192572967689676`*^9, 
+  3.7192573082570715`*^9}},ExpressionUUID->"b99c0af6-79e8-4ceb-9e0a-\
+b97d0ccda929"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringReplace", "[", 
+  RowBox[{
+   RowBox[{"output", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{
+    "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"\"\<$1t\>\"", "<>", 
+     RowBox[{"IntegerString", "[", 
+      RowBox[{
+       RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], ",", "10", ",", 
+       "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7192566416025596`*^9, 3.719256735352107*^9}, {
+  3.7192568711660013`*^9, 3.7192569117333765`*^9}, {3.719256985236725*^9, 
+  3.7192569856530375`*^9}, {3.719257033236272*^9, 3.7192570609506664`*^9}, {
+  3.719257163139062*^9, 
+  3.719257275714117*^9}},ExpressionUUID->"cb948818-fcc8-4439-808d-\
+10beedb77de7"],
+
+Cell[BoxData["\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t001B02_0000c1.tif\"\
+\>"], "Output",
+ CellChangeTimes->{
+  3.7192567357873898`*^9, 3.7192568865557575`*^9, 3.7192569867748013`*^9, {
+   3.719257034021864*^9, 3.7192570633653307`*^9}, {3.7192572696808615`*^9, 
+   3.7192572762855196`*^9}},ExpressionUUID->"213996b0-3867-4815-a076-\
+d7c4011f2335"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"StringReplace", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{
+       RowBox[{
+       "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", "]"}], 
+       "\[RuleDelayed]", 
+       RowBox[{"\"\<$1t\>\"", "<>", 
+        RowBox[{"IntegerString", "[", 
+         RowBox[{
+          RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], ",", "10", ",", 
+          "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], "]"}], "&"}], ",", 
+   RowBox[{"output", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ";;", "10"}], "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7192493541578064`*^9, 3.7192493752435436`*^9}, {
+  3.7192496906159563`*^9, 3.719249691047259*^9}, {3.719255948160467*^9, 
+  3.719255966975737*^9}, {3.7192560300651555`*^9, 3.719256033663694*^9}, {
+  3.7192565433539133`*^9, 3.7192566037701387`*^9}, {3.719257334162343*^9, 
+  3.7192573410421963`*^9}},ExpressionUUID->"492d3c97-0f15-40ee-a211-\
+d9e0a9670b09"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t001B02_0000c1.tif\"\>",
+    ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t001B02_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t002B02_0000c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t002B02_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t003B02_0000c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t003B02_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t004B02_0000c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t004B02_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t005B02_0000c1.tif\"\>", 
+   ",", "\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t005B02_0001c1.tif\"\>"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.719249395039377*^9, 
+  3.719257343715081*^9},ExpressionUUID->"3d3286da-854b-4d87-9e58-\
+a7eb6dd69502"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Same function, but add 48 (for 867)",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.719257421056636*^9, 3.719257431728161*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringReplace", "[", 
+  RowBox[{
+   RowBox[{"output", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{
+    "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"\"\<$1t\>\"", "<>", 
+     RowBox[{"IntegerString", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], "+", "48"}], ",", 
+       "10", ",", "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7192574396337376`*^9, 3.71925744048234*^9}}],
+
+Cell[BoxData["\<\".\\\\WellB02_Seq0000\\\\WellB02_Seq0000t049B02_0000c1.tif\"\
+\>"], "Output",
+ CellChangeTimes->{3.719257440884619*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Same function, but add 158 (for 752)",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.7192574839840193`*^9, 3.7192574923198986`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"StringReplace", "[", 
+  RowBox[{
+   RowBox[{"output", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{
+    "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"\"\<$1t\>\"", "<>", 
+     RowBox[{"IntegerString", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], "+", "158"}], ",", 
+       "10", ",", "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7192574582248507`*^9, 3.719257458321921*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  "\"\<C:\\\\Users\\\\jchang6\\\\Desktop\\\\temp\\\\2017_11_02_exported_tifs\\\
+\\temp\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7192578427049294`*^9, 3.719257886166305*^9}, {
+  3.7192579207754936`*^9, 3.7192579395636244`*^9}}],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\jchang6\\\\Desktop\\\\temp\\\\2017_11_02_\
+exported_tifs\\\\temp\"\>"], "Output",
+ CellChangeTimes->{3.719257940237097*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files", "=", 
+  RowBox[{"FileNames", "[", 
+   RowBox[{"\"\<*.tif\>\"", ",", "\"\<.\>\"", ",", "Infinity"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.71925794441704*^9, 3.7192579542508893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\".\\\\wellf06_seq0030F06_0000t001c1.tif\"\>", 
+   ",", "\<\".\\\\wellf06_seq0030F06_0000t001c2.tif\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.719257955419706*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["File rename function:",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.7192580401148996`*^9, 3.7192580463132315`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"RenameFile", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{
+         RowBox[{
+         "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", 
+          "]"}], "\[RuleDelayed]", 
+         RowBox[{"\"\<$1t\>\"", "<>", 
+          RowBox[{"IntegerString", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], "+", "158"}], 
+            ",", "10", ",", "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], 
+       "]"}]}], "]"}], "&"}], ",", "\[IndentingNewLine]", "files"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7192579591193137`*^9, 3.719257996251243*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Users\\\\jchang6\\\\Desktop\\\\temp\\\\2017_11_02_\
+exported_tifs\\\\temp\\\\wellf06_seq0030F06_0000t159c1.tif\"\>", 
+   ",", "\<\"C:\\\\Users\\\\jchang6\\\\Desktop\\\\temp\\\\2017_11_02_exported_\
+tifs\\\\temp\\\\wellf06_seq0030F06_0000t159c2.tif\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7192580064593787`*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["For 204:",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.7192747888028483`*^9, 3.7192747915858636`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\<E:\\\\temp\\\\204\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.719274834118519*^9, 3.719274840080686*^9}, {
+  3.7194398687690325`*^9, 3.7194398697757936`*^9}, {3.723702748264965*^9, 
+  3.723702750309431*^9}},ExpressionUUID->"78622613-ccad-41f4-82d7-\
+58c331ad4d31"],
+
+Cell[BoxData["\<\"E:\\\\temp\\\\204\"\>"], "Output",
+ CellChangeTimes->{3.719274726128044*^9, 3.7192748425594177`*^9, 
+  3.723703377370999*^9},ExpressionUUID->"3523da99-e8f1-49ba-9fdc-\
+9769291424db"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"files204", " ", "=", " ", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<*.tif\>\"", ",", "\"\<.\>\"", ",", "Infinity"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7192747433320684`*^9, 
+  3.719274751395705*^9}},ExpressionUUID->"bfc016f6-9ae3-41f5-abf7-\
+ba6e5a08b320"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files204", "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ";;", "10"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719274774202645*^9, 
+  3.719274778370558*^9}},ExpressionUUID->"5bd2553b-33e9-42c1-96de-\
+eab0c90972ea"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0000c1.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0000c2.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0000c3.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0000c4.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0000c5.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0001c2.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0001c3.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0001c4.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t01G04_0001c5.tif\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.719274778975979*^9, 3.719274857539888*^9, 
+  3.723703386388391*^9},ExpressionUUID->"cc35fdba-bfdc-40d9-b110-\
+2f9b082c8c76"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"RenameFile", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{
+         RowBox[{
+         "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", 
+          "]"}], "\[RuleDelayed]", 
+         RowBox[{"\"\<$1t\>\"", "<>", 
+          RowBox[{"IntegerString", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], "+", "0"}], 
+            ",", "10", ",", "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], 
+       "]"}]}], "]"}], "&"}], ",", "\[IndentingNewLine]", "files204"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7192747951232758`*^9, 3.7192748018429613`*^9}, {
+  3.7192748788017483`*^9, 
+  3.7192749343855953`*^9}},ExpressionUUID->"3a9ed047-41e8-4f1f-8ac0-\
+55a3f9542f05"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t001G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t002G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t003G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t004G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t005G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t006G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t007G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t008G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t009G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t010G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t011G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t012G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t013G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t014G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t015G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t016G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t017G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t018G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t019G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t020G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t021G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t022G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t023G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t024G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t025G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t026G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t027G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t028G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t029G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t030G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t031G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t032G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t033G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t034G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t035G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t036G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t037G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t038G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t039G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t040G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t041G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t042G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t043G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t044G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t045G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t046G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t047G04_\
+0001c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0000c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0000c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0000c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0000c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0000c5.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0001c1.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0001c2.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0001c3.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0001c4.tif\"\>", 
+   ",", "\<\"E:\\\\temp\\\\204\\\\WellG04_Seq0037\\\\WellG04_Seq0037t048G04_\
+0001c5.tif\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7192749295342045`*^9, 3.719275029542693*^9, 
+  3.723703397553305*^9},ExpressionUUID->"b515b264-b7cf-451b-969f-\
+6167a6a7e654"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["For 867:",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.7192751145901384`*^9, 
+  3.7192751170698757`*^9}},ExpressionUUID->"410100fb-8488-4007-84b3-\
+1a1d97426c34"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\<E:\\\\temp\\\\867\>\"", "]"}]], "Input",
+ CellChangeTimes->{
+  3.719275176159148*^9, 3.719275928887141*^9, {3.719439885712866*^9, 
+   3.7194398863363013`*^9}, {3.719439975857894*^9, 3.7194399767675037`*^9}, {
+   3.723703441549493*^9, 
+   3.7237034426893005`*^9}},ExpressionUUID->"4216ed78-fd77-4823-82de-\
+12a96be1df7c"],
+
+Cell[BoxData["\<\"E:\\\\temp\\\\867\"\>"], "Output",
+ CellChangeTimes->{3.7192751791632476`*^9, 3.7192758537801437`*^9, 
+  3.719275931174737*^9, 3.7193264434356356`*^9, 3.7194398867886167`*^9, 
+  3.7237034447007265`*^9},ExpressionUUID->"43c8c7af-0e38-41d5-91b9-\
+b8a1b3ecec0e"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"files867", " ", "=", " ", 
+   RowBox[{"Reverse", "[", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"\"\<*.tif\>\"", ",", "\"\<.\>\"", ",", "Infinity"}], "]"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7192751908134117`*^9, 3.7192751940456495`*^9}, {
+  3.719275830440679*^9, 
+  3.719275836391877*^9}},ExpressionUUID->"aab103cf-4bfa-4297-9731-\
+93e71ccee29a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files867", "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ";;", "10"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719275199719615*^9, 
+  3.719275204541986*^9}},ExpressionUUID->"7f2abb22-fde6-4ca5-b959-\
+ee34902288ad"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0001c5.tif\"\>",
+    ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0001c4.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0001c3.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0001c2.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0000c5.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0000c4.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0000c3.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0000c2.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t110G04_0000c1.tif\"\>"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.7192752053045187`*^9, 3.7192758673477116`*^9, 
+  3.719275970622556*^9, 3.719276257487244*^9, 3.719326455831299*^9, 
+  3.7194399002950563`*^9, 
+  3.7237034621571007`*^9},ExpressionUUID->"c58e8114-bd56-41f8-9eb8-\
+fb4214e8a356"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RenameFile", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{
+          RowBox[{
+          "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", 
+           "]"}], "\[RuleDelayed]", 
+          RowBox[{"\"\<$1t\>\"", "<>", 
+           RowBox[{"IntegerString", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], "+", "48"}], 
+             ",", "10", ",", "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], 
+        "]"}]}], "]"}], "&"}], ",", "\[IndentingNewLine]", "files867"}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7192752158699026`*^9, 3.7192752273899546`*^9}, 
+   3.723703452689389*^9},ExpressionUUID->"6858a333-fb6e-4cca-91f6-\
+efd9172cdd5b"],
+
+Cell[TextData[StyleBox["For 752:",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.71927654590374*^9, 3.7192765541755505`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\<E:\\\\temp\\\\752\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.719276564384657*^9, 3.719276570367835*^9}, {
+  3.723703480229912*^9, 
+  3.7237034817049575`*^9}},ExpressionUUID->"80ce5410-c709-48b5-bb4c-\
+344bf7a2023f"],
+
+Cell[BoxData["\<\"E:\\\\temp\\\\752\"\>"], "Output",
+ CellChangeTimes->{3.7192765715326495`*^9, 
+  3.723703484385858*^9},ExpressionUUID->"2dae2f5f-52ec-4a55-a38f-\
+23ed868ca92e"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"files752", " ", "=", " ", 
+   RowBox[{"Reverse", "[", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"\"\<*.tif\>\"", ",", "\"\<.\>\"", ",", "Infinity"}], "]"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.719276577231634*^9, 
+  3.719276580927243*^9}},ExpressionUUID->"07825e4b-5220-45fe-a08f-\
+c4d1bfa8cd73"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files752", "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ";;", "10"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719276583398943*^9, 
+  3.719276588735673*^9}},ExpressionUUID->"7cc38075-254c-46fc-85a6-\
+e3ecb8df9ffd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0001c5.tif\"\>",
+    ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0001c4.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0001c3.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0001c2.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0001c1.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0000c5.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0000c4.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0000c3.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0000c2.tif\"\>", 
+   ",", "\<\".\\\\WellG04_Seq0037\\\\WellG04_Seq0037t106G04_0000c1.tif\"\>"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.719276637683884*^9, 
+  3.7237034991923532`*^9},ExpressionUUID->"f0c33b57-f749-4e8b-896a-\
+074946686268"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RenameFile", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{
+          RowBox[{
+          "RegularExpression", "[", "\"\<(.*)t(\\\\d+)(\\\\D.*).tif\>\"", 
+           "]"}], "\[RuleDelayed]", 
+          RowBox[{"\"\<$1t\>\"", "<>", 
+           RowBox[{"IntegerString", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ToExpression", "[", "\"\<$2\>\"", "]"}], "+", "158"}], 
+             ",", "10", ",", "3"}], "]"}], "<>", "\"\<$3.tif\>\""}]}]}], 
+        "]"}]}], "]"}], "&"}], ",", "\[IndentingNewLine]", "files752"}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7192765981922817`*^9, 3.7192766136961174`*^9}, 
+   3.723703495394662*^9},ExpressionUUID->"55cb9cfa-498c-4d27-b195-\
+98262ab71ec2"]
+},
+WindowSize->{831, 833},
+WindowMargins->{{107, Automatic}, {Automatic, 109}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 738, 14, 144, "Text",ExpressionUUID->"d108e66f-818a-4b51-ae1e-138ab74473a6"],
+Cell[1299, 36, 187, 4, 34, "Text",ExpressionUUID->"822d3c30-2022-45c3-9b07-5753b9e50b0a"],
+Cell[CellGroupData[{
+Cell[1511, 44, 482, 8, 28, "Input",ExpressionUUID->"f7acfba0-3646-47b0-98b9-9b680283d322"],
+Cell[1996, 54, 381, 6, 32, "Output",ExpressionUUID->"45446043-a561-4b86-be7f-759393386be7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2414, 65, 304, 7, 28, "Input",ExpressionUUID->"bbe1fb87-7645-45a2-aa9d-8551353755f7"],
+Cell[2721, 74, 8506, 215, 191, "Output",ExpressionUUID->"28cb0f20-871b-41ba-a8e5-3863e157e407"]
+}, Open  ]],
+Cell[11242, 292, 212, 5, 28, "Input",ExpressionUUID->"94f210f3-9ea2-4bc7-a902-bedcb9a122fc"],
+Cell[11457, 299, 443, 8, 56, "Text",ExpressionUUID->"b99c0af6-79e8-4ceb-9e0a-b97d0ccda929"],
+Cell[CellGroupData[{
+Cell[11925, 311, 805, 19, 53, "Input",ExpressionUUID->"cb948818-fcc8-4439-808d-10beedb77de7"],
+Cell[12733, 332, 352, 6, 32, "Output",ExpressionUUID->"213996b0-3867-4815-a076-d7c4011f2335"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13122, 343, 987, 23, 75, "Input",ExpressionUUID->"492d3c97-0f15-40ee-a211-d9e0a9670b09"],
+Cell[14112, 368, 956, 15, 204, "Output",ExpressionUUID->"3d3286da-854b-4d87-9e58-a7eb6dd69502"]
+}, Open  ]],
+Cell[15083, 386, 158, 2, 34, "Text",ExpressionUUID->"10a0f490-3480-44da-b96f-25e50456d644"],
+Cell[CellGroupData[{
+Cell[15266, 392, 573, 15, 53, "Input",ExpressionUUID->"8fff4652-d433-43d4-96c7-f19a687c33ad"],
+Cell[15842, 409, 136, 2, 32, "Output",ExpressionUUID->"d2e1d32c-e886-470b-b0a2-88e38d47aa35"]
+}, Open  ]],
+Cell[15993, 414, 163, 2, 34, "Text",ExpressionUUID->"4e760c11-033c-4e62-8342-5f03aad117d6"],
+Cell[16159, 418, 575, 15, 53, "Input",ExpressionUUID->"c6580967-791c-4ac3-a5b9-a34b76735913"],
+Cell[CellGroupData[{
+Cell[16759, 437, 275, 5, 28, "Input",ExpressionUUID->"739be641-98b1-449e-bbe1-0b1f64a112e0"],
+Cell[17037, 444, 156, 2, 32, "Output",ExpressionUUID->"a2d294de-533c-45d8-94d0-64dcf747980c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17230, 451, 221, 5, 28, "Input",ExpressionUUID->"5edb7b40-7852-4d8a-a3dc-6c575ab24831"],
+Cell[17454, 458, 209, 4, 32, "Output",ExpressionUUID->"52021dbf-ac44-4c01-b945-5bc2c689daf5"]
+}, Open  ]],
+Cell[17678, 465, 148, 2, 34, "Text",ExpressionUUID->"9f800d99-e910-431d-a514-9bcd0e427218"],
+Cell[CellGroupData[{
+Cell[17851, 471, 751, 20, 97, "Input",ExpressionUUID->"0929380b-16c9-4ceb-87b9-1c2eef667bc4"],
+Cell[18605, 493, 367, 6, 52, "Output",ExpressionUUID->"44a562ac-807a-4a24-add8-24e095809486"]
+}, Open  ]],
+Cell[18987, 502, 135, 2, 34, "Text",ExpressionUUID->"359736b7-3610-42a7-9951-fdc43d9ec977"],
+Cell[CellGroupData[{
+Cell[19147, 508, 314, 5, 28, "Input",ExpressionUUID->"78622613-ccad-41f4-82d7-58c331ad4d31"],
+Cell[19464, 515, 200, 3, 32, "Output",ExpressionUUID->"3523da99-e8f1-49ba-9fdc-9769291424db"]
+}, Open  ]],
+Cell[19679, 521, 314, 8, 28, "Input",ExpressionUUID->"bfc016f6-9ae3-41f5-abf7-ba6e5a08b320"],
+Cell[CellGroupData[{
+Cell[20018, 533, 236, 6, 28, "Input",ExpressionUUID->"5bd2553b-33e9-42c1-96de-eab0c90972ea"],
+Cell[20257, 541, 968, 15, 204, "Output",ExpressionUUID->"cc35fdba-bfdc-40d9-b110-2f9b082c8c76"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21262, 561, 867, 23, 97, "Input",ExpressionUUID->"3a9ed047-41e8-4f1f-8ac0-55a3f9542f05"],
+Cell[22132, 586, 46277, 964, 9134, "Output",ExpressionUUID->"b515b264-b7cf-451b-969f-6167a6a7e654"]
+}, Open  ]],
+Cell[68424, 1553, 195, 4, 34, "Text",ExpressionUUID->"410100fb-8488-4007-84b3-1a1d97426c34"],
+Cell[CellGroupData[{
+Cell[68644, 1561, 369, 7, 28, "Input",ExpressionUUID->"4216ed78-fd77-4823-82de-12a96be1df7c"],
+Cell[69016, 1570, 277, 4, 32, "Output",ExpressionUUID->"43c8c7af-0e38-41d5-91b9-b8a1b3ecec0e"]
+}, Open  ]],
+Cell[69308, 1577, 404, 10, 28, "Input",ExpressionUUID->"aab103cf-4bfa-4297-9731-93e71ccee29a"],
+Cell[CellGroupData[{
+Cell[69737, 1591, 236, 6, 28, "Input",ExpressionUUID->"7f2abb22-fde6-4ca5-b959-ee34902288ad"],
+Cell[69976, 1599, 1080, 17, 204, "Output",ExpressionUUID->"c58e8114-bd56-41f8-9eb8-fb4214e8a356"]
+}, Open  ]],
+Cell[71071, 1619, 874, 23, 97, "Input",ExpressionUUID->"6858a333-fb6e-4cca-91f6-efd9172cdd5b"],
+Cell[71948, 1644, 132, 2, 34, "Text",ExpressionUUID->"eb38c966-94ed-4f8b-9252-4f0aa823124e"],
+Cell[CellGroupData[{
+Cell[72105, 1650, 266, 5, 28, "Input",ExpressionUUID->"80ce5410-c709-48b5-bb4c-344bf7a2023f"],
+Cell[72374, 1657, 178, 3, 32, "Output",ExpressionUUID->"2dae2f5f-52ec-4a55-a38f-23ed868ca92e"]
+}, Open  ]],
+Cell[72567, 1663, 351, 9, 28, "Input",ExpressionUUID->"07825e4b-5220-45fe-a08f-c4d1bfa8cd73"],
+Cell[CellGroupData[{
+Cell[72943, 1676, 236, 6, 28, "Input",ExpressionUUID->"7cc38075-254c-46fc-85a6-e3ecb8df9ffd"],
+Cell[73182, 1684, 958, 15, 204, "Output",ExpressionUUID->"f0c33b57-f749-4e8b-896a-074946686268"]
+}, Open  ]],
+Cell[74155, 1702, 875, 23, 154, "Input",ExpressionUUID->"55cb9cfa-498c-4d27-b195-98262ab71ec2"]
+}
+]
+*)
+

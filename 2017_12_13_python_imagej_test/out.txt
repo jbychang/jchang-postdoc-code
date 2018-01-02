@@ -1,0 +1,1 @@
+[INFO] Detected existing ImageJ; passing arguments along

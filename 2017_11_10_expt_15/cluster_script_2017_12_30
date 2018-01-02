@@ -1,0 +1,1 @@
+source activate py35 && export LD_LIBRARY_PATH=$HOME/glibc-2.14/lib && python /awlab/users/jchang/code/2017_11_10_expt_15/2017_12_18_tif_to_h5_v2.py && source deactivate
