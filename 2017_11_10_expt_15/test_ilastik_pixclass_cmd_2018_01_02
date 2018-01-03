@@ -1,0 +1,1 @@
+./run_ilastik.sh --headless --project=/awlab/users/jchang/code/2017_11_10_expt_15/2018_01_02_ilastik13b4_pixclass.ilp /awlab/users/jchang/raw_data/2017_11_10_expt_15_SK_dose_response_h5/C03/WellC03_0000c1-2.h5 

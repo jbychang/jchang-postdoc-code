@@ -4,9 +4,8 @@ Created on Sun Dec 31 14:54:46 2017
 
 @author: jchang6
 """
-
 """ 
-This script goes into each subdirectory, identify the relevant pairs of h5 files, load them up, and save them with appropriate axis tags in a new .h5 file.
+This script goes into each subdirectory, identifies the relevant pairs of h5 files, load them up, and save them with appropriate axis tags in a new .h5 file.
 
 """
 import vigra
