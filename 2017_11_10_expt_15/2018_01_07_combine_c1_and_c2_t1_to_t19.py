@@ -27,7 +27,7 @@ if __name__ == "__main__":
     print('Now processing directory '+'{sbdr}')
     os.chdir('{sbdr}')
     
-    pattern = re.compile(r'Well([A-Z]\d\d)_(\d\d\d\d)c([0-9]).h5') 
+    pattern = re.compile(r'Well([A-Z]\d\d)_(\d\d\d\d)c([0-9])_t1_to_t19.h5') 
     allFiles = os.listdir('{sbdr}')
     well = list(set([pattern.match(f).group(1) for f in allFiles if pattern.match(f)]))
     sites = sorted(set([pattern.match(f).group(2) for f in allFiles if pattern.match(f)]))
@@ -39,8 +39,8 @@ if __name__ == "__main__":
     
     
     for ste in sites:
-        h5Filename1 = os.path.join('{sbdr}', 'Well'+well[0]+'_'+ste+'c1.h5')
-        h5Filename2 = os.path.join('{sbdr}', 'Well'+well[0]+'_'+ste+'c2.h5')
+        h5Filename1 = os.path.join('{sbdr}', 'Well'+well[0]+'_'+ste+'c1_t1_to_t19.h5')
+        h5Filename2 = os.path.join('{sbdr}', 'Well'+well[0]+'_'+ste+'c2_t1_to_t19.h5')
         print('now processing files '+ h5Filename1 + ' and ' + h5Filename2)
     
         h5File1 = vigra.impex.readHDF5(h5Filename1, 'stacked_timepoints')
@@ -53,7 +53,7 @@ if __name__ == "__main__":
         axistags = vigra.defaultAxistags('xytc')
     #        print (axistags)
         
-        outputFilename = os.path.join('{sbdr}', 'Well'+well[0]+'_'+ste+'c1-2.h5')
+        outputFilename = os.path.join('{sbdr}', 'Well'+well[0]+'_'+ste+'c1-2_t1_to_t19.h5')
         print('saving as ' + outputFilename)
         with h5py.File(outputFilename, 'w') as f:
             dset = f.create_dataset('data', shape=volume_shape, dtype=data_type, chunks=True)
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     os.chdir(previousDirectory)""".format(sbdr=str(subDir))
     # print(outputString.format(sbdr=subDir))
     # print(subDir)
-    with open(os.path.join(codeDirectory,'combine_c1_c2_script_' + os.path.basename(os.path.normpath(subDir))+ '.py'), 'w') as f:
+    with open(os.path.join(codeDirectory,'combine_c1_c2_script_' + os.path.basename(os.path.normpath(subDir))+ '_t1_to_t19.py'), 'w') as f:
         f.write(outputString)
 
 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     #specify parent directory containing wells. Code assumes that it includes backslashes at the end.
     directory = '/awlab/users/jchang/raw_data/2017_11_10_expt_15_SK_dose_response_h5'
     codeDirectoryInput = '/awlab/users/jchang/code/2017_11_10_expt_15'
-    codeDirectory = os.path.join(codeDirectoryInput, 'combine_c1_c2_scripts')
+    codeDirectory = os.path.join(codeDirectoryInput, 'temp_scripts')
     if not os.path.exists(codeDirectory):
         os.makedirs(codeDirectory)
     print('this script will produce a set of python scripts, each of which processes one well, and a shell script to run that set of python scripts.')
@@ -82,14 +82,14 @@ if __name__ == "__main__":
 
     wellRegExp = re.compile('[A-H]\d\d')
     subDirectories = sorted([name for name in os.listdir(directory) if os.path.isdir(os.path.join(directory, name)) & bool(wellRegExp.match(name))])
-    master_script_path = os.path.join(codeDirectory, 'combine_c1_c2_master_script')
+    master_script_path = os.path.join(codeDirectory, 'combine_c1_c2_t1_to_t19_master_script')
     print('all subdirectories: {}'.format(subDirectories))
     print('master script path: {}'.format(master_script_path))
-    for counter, subDir in enumerate(subDirectories[40:]):
+    for counter, subDir in enumerate(subDirectories):
         print('writing script for directory ' + subDir)
         subDirectory = os.path.join(directory, subDir)
         writeCombineh5Script(subDirectory, codeDirectory)
-        line_to_write=r'source activate py35 && export LD_LIBRARY_PATH=$HOME/glibc-2.14/lib && python ' + os.path.join(codeDirectory,'combine_c1_c2_script_' + os.path.basename(os.path.normpath(subDir))+ '.py') + ' && source deactivate\n'
+        line_to_write=r'source activate py35 && export LD_LIBRARY_PATH=$HOME/glibc-2.14/lib && python ' + os.path.join(codeDirectory,'combine_c1_c2_script_' + os.path.basename(os.path.normpath(subDir))+ '_t1_to_t19.py') + ' && source deactivate\n'
         if counter == 0:
             f = open(master_script_path, 'w')
             f.write(line_to_write)

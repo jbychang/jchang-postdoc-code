@@ -15,7 +15,7 @@ subDirectories = sorted([name for name in os.listdir(parentDirectory) if os.path
 print('all subdirectories: {}'.format(subDirectories))
 
 with open('/awlab/users/jchang/code/2017_11_10_expt_15/cluster_script_ilastik_pixclass_2018_01_02', 'w') as f:
-    for subDir in subDirectories[0:40]:
+    for subDir in subDirectories[40:]:
         directory = os.path.join(parentDirectory, subDir)
         print('in directory ' + directory)
         h5Files = glob.glob(os.path.join(directory, r'*c1-2.h5'))
