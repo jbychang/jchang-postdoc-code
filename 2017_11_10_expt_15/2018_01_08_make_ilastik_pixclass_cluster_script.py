@@ -14,13 +14,13 @@ wellRegExp = re.compile('[A-H]\d\d')
 subDirectories = sorted([name for name in os.listdir(parentDirectory) if os.path.isdir(os.path.join(parentDirectory, name)) & bool(wellRegExp.match(name))])
 print('all subdirectories: {}'.format(subDirectories))
 
-with open('/awlab/users/jchang/code/2017_11_10_expt_15/cluster_script_ilastik_pixclass_2018_01_02', 'w') as f:
-    for subDir in subDirectories[40:]:
+with open('/awlab/users/jchang/code/2017_11_10_expt_15/temp_scripts/cluster_script_ilastik_pixclass_2018_01_08', 'w') as f:
+    for subDir in subDirectories:
         directory = os.path.join(parentDirectory, subDir)
         print('in directory ' + directory)
-        h5Files = glob.glob(os.path.join(directory, r'*c1-2.h5'))
-        print(r'found the following *c1-2.h5 files: ' + str(h5Files))
+        h5Files = glob.glob(os.path.join(directory, r'*c1-2*.h5'))
+        print(r'found the following *c1-2*.h5 files: ' + str(h5Files))
         for h5File in h5Files:
-            f.write('/awlab/users/jchang/programs/ilastik-1.3.0b3-Linux/run_ilastik.sh --headless --project=/awlab/users/jchang/code/2017_11_10_expt_15/2018_01_02_ilastik13b4_pixclass.ilp '+ os.path.join(directory, h5File)+'\n')
+            f.write('/awlab/users/jchang/programs/ilastik-1.3.0b3-Linux/run_ilastik.sh --headless --project=/awlab/users/jchang/code/2017_11_10_expt_15/2018_01_08_ilastik_13b3_pixclass.ilp '+ os.path.join(directory, h5File)+'\n')
 
     

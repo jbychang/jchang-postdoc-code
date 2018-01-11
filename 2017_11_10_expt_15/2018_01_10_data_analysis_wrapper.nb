@@ -1,0 +1,2449 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    108540,       2441]
+NotebookOptionsPosition[    102909,       2370]
+NotebookOutlinePosition[    103257,       2385]
+CellTagsIndexPosition[    103214,       2382]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Pseudocode (that I didn\[CloseCurlyQuote]t end up implementing):
+User input: parent directory, wells and sites to process, Ilastik output \
+directory
+Use MapThread to go through it
+
+Wells to analyze: C/F/G 2/6/7 
+Sites: 0000, 0001
+\
+\>", "Text",
+ CellChangeTimes->{{3.724622249439123*^9, 3.7246223371763573`*^9}, {
+  3.7246224748067636`*^9, 3.724622480819853*^9}, {3.724643916685408*^9, 
+  3.7246439202834754`*^9}, {3.7246439851159*^9, 3.724643988643777*^9}, {
+  3.7246440411227536`*^9, 3.7246440439880047`*^9}, {3.7246441116076465`*^9, 
+  3.724644196669175*^9}, {3.724644300634613*^9, 3.7246443143811088`*^9}, {
+  3.724644565335802*^9, 3.7246445666163673`*^9}, {3.7246489366138744`*^9, 
+  3.7246489681299467`*^9}},ExpressionUUID->"7ce0fddb-2182-47a0-a053-\
+300f4a9cd414"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "parentInputDirectory", "=", 
+   "\"\<E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "parentOutputDirectory", "=", 
+   "\"\<E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"boundingBoxPadding", "=", "12"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dilationSize", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"wellList", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<C02\>\"", ",", " ", "\"\<C06\>\"", ",", " ", "\"\<C07\>\"", ",", 
+       " ", "\"\<F02\>\"", ",", " ", "\"\<F06\>\"", ",", " ", "\"\<F07\>\"", 
+       ",", " ", "\"\<G02\>\"", ",", " ", "\"\<G06\>\"", ",", " ", 
+       "\"\<G07\>\""}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"siteList", "=", 
+     RowBox[{"{", 
+      RowBox[{"\"\<0000\>\"", ",", "\"\<0001\>\""}], "}"}]}], ";"}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.7246445875949802`*^9, 3.7246448516145887`*^9}, {
+   3.72464501516461*^9, 3.7246450354795537`*^9}, {3.7246482965422363`*^9, 
+   3.7246483024183435`*^9}, 3.724648925682988*^9, {3.7246495024483576`*^9, 
+   3.7246495027312527`*^9}, {3.724675598613201*^9, 
+   3.7246756012800603`*^9}},ExpressionUUID->"17736f6d-6ce3-4939-ac3d-\
+93e144dd448e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"createCInputsT1ToT19", "[", 
+    RowBox[{"well_", ",", " ", "channels_", ",", "site_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{"parentInputDirectory", ",", "well", ",", 
+           RowBox[{
+           "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", "site", 
+            "<>", "\"\<c\>\"", "<>", 
+            RowBox[{"ToString", "[", "#", "]"}], "<>", 
+            "\"\<_t1_to_t19.h5\>\""}]}], "}"}], "]"}], "&"}], ",", 
+       "channels"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_CSV-Table.csv\>\""}]}], "}"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_Tracking-Result.h5\>\""}]}], "}"}],
+       "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_Object-Identities.h5\>\""}]}], 
+       "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<nucSize\>\"", ",", "\"\<nucMeanIntensity\>\""}], 
+         "}"}]}], "}"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentOutputDirectory", ",", 
+        RowBox[{
+        "\"\<2018_01_10_mathematica_output_\>\"", "<>", "well", "<>", 
+         "\"\<_\>\"", "<>", "site", "<>", "\"\<_t1_to_t19.wl\>\""}]}], "}"}], 
+      "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"createCInputsT20ToTEnd", "[", 
+     RowBox[{"well_", ",", " ", "channels_", ",", "site_"}], "]"}], ":=", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"parentInputDirectory", ",", "well", ",", 
+            RowBox[{
+            "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", "site", 
+             "<>", "\"\<c\>\"", "<>", 
+             RowBox[{"ToString", "[", "#", "]"}], "<>", 
+             "\"\<_t20_to_tend.h5\>\""}]}], "}"}], "]"}], "&"}], ",", 
+        "channels"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentInputDirectory", ",", 
+         RowBox[{
+         "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+          "site", "<>", "\"\<c1-2_t20_to_tend_CSV-Table.csv\>\""}]}], "}"}], 
+       "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentInputDirectory", ",", 
+         RowBox[{
+         "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+          "site", "<>", "\"\<c1-2_t20_to_tend_Tracking-Result.h5\>\""}]}], 
+        "}"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentInputDirectory", ",", 
+         RowBox[{
+         "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+          "site", "<>", "\"\<c1-2_t20_to_tend_Object-Identities.h5\>\""}]}], 
+        "}"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<nucSize\>\"", ",", "\"\<nucMeanIntensity\>\""}], 
+          "}"}]}], "}"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentOutputDirectory", ",", 
+         RowBox[{
+         "\"\<2018_01_10_mathematica_output_\>\"", "<>", "well", "<>", 
+          "\"\<_\>\"", "<>", "site", "<>", "\"\<_t20_to_tend.wl\>\""}]}], 
+        "}"}], "]"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"createFInputsT1ToT19", "[", 
+    RowBox[{"well_", ",", " ", "channels_", ",", "site_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{"parentInputDirectory", ",", "well", ",", 
+           RowBox[{
+           "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", "site", 
+            "<>", "\"\<c\>\"", "<>", 
+            RowBox[{"ToString", "[", "#", "]"}], "<>", 
+            "\"\<_t1_to_t19.h5\>\""}]}], "}"}], "]"}], "&"}], ",", 
+       "channels"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_CSV-Table.csv\>\""}]}], "}"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_Tracking-Result.h5\>\""}]}], "}"}],
+       "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_Object-Identities.h5\>\""}]}], 
+       "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<nucSize\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}], 
+          "}"}]}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<nucSize\>\"", ",", "\"\<cytoMeanIntensity\>\"", ",", " ", 
+           "\"\<nucMeanIntensity\>\""}], "}"}]}], "}"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentOutputDirectory", ",", 
+        RowBox[{
+        "\"\<2018_01_10_mathematica_output_\>\"", "<>", "well", "<>", 
+         "\"\<_\>\"", "<>", "site", "<>", "\"\<_t1_to_t19.wl\>\""}]}], "}"}], 
+      "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"createFInputsT20ToTEnd", "[", 
+     RowBox[{"well_", ",", " ", "channels_", ",", "site_"}], "]"}], ":=", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"parentInputDirectory", ",", "well", ",", 
+            RowBox[{
+            "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", "site", 
+             "<>", "\"\<c\>\"", "<>", 
+             RowBox[{"ToString", "[", "#", "]"}], "<>", 
+             "\"\<_t20_to_tend.h5\>\""}]}], "}"}], "]"}], "&"}], ",", 
+        "channels"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentInputDirectory", ",", 
+         RowBox[{
+         "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+          "site", "<>", "\"\<c1-2_t20_to_tend_CSV-Table.csv\>\""}]}], "}"}], 
+       "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentInputDirectory", ",", 
+         RowBox[{
+         "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+          "site", "<>", "\"\<c1-2_t20_to_tend_Tracking-Result.h5\>\""}]}], 
+        "}"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentInputDirectory", ",", 
+         RowBox[{
+         "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+          "site", "<>", "\"\<c1-2_t20_to_tend_Object-Identities.h5\>\""}]}], 
+        "}"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"2", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"\"\<nucSize\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}], 
+           "}"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<nucSize\>\"", ",", "\"\<cytoMeanIntensity\>\"", ",", " ", 
+            "\"\<nucMeanIntensity\>\""}], "}"}]}], "}"}]}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"parentOutputDirectory", ",", 
+         RowBox[{
+         "\"\<2018_01_10_mathematica_output_\>\"", "<>", "well", "<>", 
+          "\"\<_\>\"", "<>", "site", "<>", "\"\<_t20_to_tend.wl\>\""}]}], 
+        "}"}], "]"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"createGInputsT1ToT19", "[", 
+    RowBox[{"well_", ",", " ", "channels_", ",", "site_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{"parentInputDirectory", ",", "well", ",", 
+           RowBox[{
+           "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", "site", 
+            "<>", "\"\<c\>\"", "<>", 
+            RowBox[{"ToString", "[", "#", "]"}], "<>", 
+            "\"\<_t1_to_t19.h5\>\""}]}], "}"}], "]"}], "&"}], ",", 
+       "channels"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_CSV-Table.csv\>\""}]}], "}"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_Tracking-Result.h5\>\""}]}], "}"}],
+       "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t1_to_t19_Object-Identities.h5\>\""}]}], 
+       "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<nucSize\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}], 
+          "}"}]}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<cytoMeanIntensity\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}],
+           "}"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentOutputDirectory", ",", 
+        RowBox[{
+        "\"\<2018_01_10_mathematica_output_\>\"", "<>", "well", "<>", 
+         "\"\<_\>\"", "<>", "site", "<>", "\"\<_t1_to_t19.wl\>\""}]}], "}"}], 
+      "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"createGInputsT20ToTEnd", "[", 
+    RowBox[{"well_", ",", " ", "channels_", ",", "site_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{"parentInputDirectory", ",", "well", ",", 
+           RowBox[{
+           "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", "site", 
+            "<>", "\"\<c\>\"", "<>", 
+            RowBox[{"ToString", "[", "#", "]"}], "<>", 
+            "\"\<_t20_to_tend.h5\>\""}]}], "}"}], "]"}], "&"}], ",", 
+       "channels"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t20_to_tend_CSV-Table.csv\>\""}]}], "}"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t20_to_tend_Tracking-Result.h5\>\""}]}], 
+       "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentInputDirectory", ",", 
+        RowBox[{
+        "well", "<>", "\"\<Well\>\"", "<>", "well", "<>", "\"\<_\>\"", "<>", 
+         "site", "<>", "\"\<c1-2_t20_to_tend_Object-Identities.h5\>\""}]}], 
+       "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<nucSize\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}], 
+          "}"}]}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<nucSize\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<nucSize\>\"", ",", " ", "\"\<nucMeanIntensity\>\""}], 
+          "}"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"parentOutputDirectory", ",", 
+        RowBox[{
+        "\"\<2018_01_10_mathematica_output_\>\"", "<>", "well", "<>", 
+         "\"\<_\>\"", "<>", "site", "<>", "\"\<_t20_to_tend.wl\>\""}]}], 
+       "}"}], "]"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.724645088348784*^9, 3.7246451165218363`*^9}, {
+   3.7246452688649693`*^9, 3.7246452715644584`*^9}, {3.724645561981783*^9, 
+   3.7246455657178307`*^9}, 3.7246456009057617`*^9, {3.7246458118661156`*^9, 
+   3.7246458137251005`*^9}, {3.7246459309722614`*^9, 3.72464602656587*^9}, {
+   3.72464606662096*^9, 3.7246460675274944`*^9}, {3.7246461281274223`*^9, 
+   3.7246462199940243`*^9}, {3.724646276410742*^9, 3.7246462869175844`*^9}, {
+   3.7246463427899384`*^9, 3.724646485206241*^9}, {3.724646517461504*^9, 
+   3.724646520903927*^9}, {3.7246465919555626`*^9, 3.724646736468778*^9}, {
+   3.7246467708584414`*^9, 3.724646881696961*^9}, {3.724646924328735*^9, 
+   3.7246469395601134`*^9}, {3.7246470027447367`*^9, 
+   3.7246470142600965`*^9}, {3.7246470988122425`*^9, 
+   3.7246471249615564`*^9}, {3.7246475806013107`*^9, 
+   3.7246476256576853`*^9}, {3.7246476641416745`*^9, 3.724647667011426*^9}, {
+   3.7246477485922003`*^9, 3.724647811608672*^9}, {3.7246478850948305`*^9, 
+   3.724647911610279*^9}, {3.724647952484333*^9, 3.7246479647584486`*^9}, {
+   3.724648117285522*^9, 3.724648155141656*^9}, {3.7246486209315357`*^9, 
+   3.724648621557578*^9}, {3.724648913628187*^9, 3.7246489157287283`*^9}, {
+   3.724648975760773*^9, 3.7246491021069083`*^9}, {3.7246492498061676`*^9, 
+   3.7246492532165737`*^9}},ExpressionUUID->"5a273957-352c-4d92-9b3d-\
+470d18cd899f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"inputs", " ", "=", 
+   RowBox[{"Join", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createFInputsT1ToT19", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", 
+            "\"\<4\>\""}], "}"}], ",", "\"\<0000\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<F02\>\"", ",", " ", "\"\<F06\>\"", ",", " ", "\"\<F07\>\""}], 
+        "}"}]}], "]"}], ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createFInputsT1ToT19", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", 
+            "\"\<4\>\""}], "}"}], ",", "\"\<0001\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<F02\>\"", ",", " ", "\"\<F06\>\"", ",", " ", "\"\<F07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createFInputsT20ToTEnd", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", 
+            "\"\<4\>\""}], "}"}], ",", "\"\<0001\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<F02\>\"", ",", " ", "\"\<F06\>\"", ",", " ", "\"\<F07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createFInputsT20ToTEnd", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", 
+            "\"\<4\>\""}], "}"}], ",", "\"\<0001\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<F02\>\"", ",", " ", "\"\<F06\>\"", ",", " ", "\"\<F07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createGInputsT1ToT19", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", "\"\<4\>\"", 
+            ",", "\"\<5\>\""}], "}"}], ",", "\"\<0000\>\""}], "]"}], "&"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<G02\>\"", ",", " ", "\"\<G06\>\"", ",", " ", "\"\<G07\>\""}], 
+        "}"}]}], "]"}], ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createGInputsT1ToT19", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", "\"\<4\>\"", 
+            ",", "\"\<5\>\""}], "}"}], ",", "\"\<0001\>\""}], "]"}], "&"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<G02\>\"", ",", " ", "\"\<G06\>\"", ",", " ", "\"\<G07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createGInputsT20ToTEnd", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", "\"\<4\>\"", 
+            ",", "\"\<5\>\""}], "}"}], ",", "\"\<0000\>\""}], "]"}], "&"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<G02\>\"", ",", " ", "\"\<G06\>\"", ",", " ", "\"\<G07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createGInputsT20ToTEnd", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\"", ",", "\"\<4\>\"", 
+            ",", "\"\<5\>\""}], "}"}], ",", "\"\<0001\>\""}], "]"}], "&"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<G02\>\"", ",", " ", "\"\<G06\>\"", ",", " ", "\"\<G07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createCInputsT1ToT19", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\""}], "}"}], 
+          ",", "\"\<0000\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<C02\>\"", ",", " ", "\"\<C06\>\"", ",", " ", "\"\<C07\>\""}], 
+        "}"}]}], "]"}], ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createCInputsT1ToT19", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\""}], "}"}], 
+          ",", "\"\<0001\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<C02\>\"", ",", " ", "\"\<C06\>\"", ",", " ", "\"\<C07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createCInputsT20ToTEnd", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\""}], "}"}], 
+          ",", "\"\<0000\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<C02\>\"", ",", " ", "\"\<C06\>\"", ",", " ", "\"\<C07\>\""}], 
+        "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"createCInputsT20ToTEnd", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<1\>\"", ",", "\"\<2\>\"", ",", "\"\<3\>\""}], "}"}], 
+          ",", "\"\<0001\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<C02\>\"", ",", " ", "\"\<C06\>\"", ",", " ", "\"\<C07\>\""}], 
+        "}"}]}], "]"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7246474464060445`*^9, 3.724647554292549*^9}, {
+  3.724647629507891*^9, 3.724647680626666*^9}, {3.7246480002753744`*^9, 
+  3.7246480565258245`*^9}, {3.7246481789349403`*^9, 3.724648248286321*^9}, {
+  3.7246487086113653`*^9, 3.7246487114098854`*^9}, {3.7246493459476204`*^9, 
+  3.72464934601665*^9}, {3.7246534471856785`*^9, 3.724653455857669*^9}, {
+  3.724657716284608*^9, 3.724657729356721*^9}, {3.7246577743120623`*^9, 
+  3.7246577849784985`*^9}},ExpressionUUID->"139bf5da-2ec0-4cd8-96f2-\
+2661b52b79d2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["inputs"], "Input",
+ CellChangeTimes->{{3.724648774276301*^9, 3.7246487765603437`*^9}, {
+  3.724649406201494*^9, 
+  3.724649406746291*^9}},ExpressionUUID->"3d1a057d-47c0-4a35-827b-\
+a1d35dfefb45"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F02\\\\WellF02_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0000c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0000c4_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F02_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F06\\\\WellF06_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0000c3_t1_to_t19.h5\"\>", 
+       ",", \
+"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\F06\\\\\
+WellF06_0000c4_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F06_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F07\\\\WellF07_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0000c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0000c4_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F07_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F02\\\\WellF02_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c4_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", \
+"\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_01_10_\
+mathematica_output_F02_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F06\\\\WellF06_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c4_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F06_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F07\\\\WellF07_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c2_t1_to_t19.h5\"\>", 
+       ",", \
+"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\F07\\\\\
+WellF07_0001c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c4_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F07_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F02\\\\WellF02_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c4_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F02_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F06\\\\WellF06_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c4_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F06_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F07\\\\WellF07_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c4_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F07_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F02\\\\WellF02_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02\\\\WellF02_0001c4_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F02WellF02_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F02_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F06\\\\WellF06_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06\\\\WellF06_0001c4_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F06WellF06_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F06_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\F07\\\\WellF07_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07\\\\WellF07_0001c4_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+F07WellF07_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_F07_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G02\\\\WellG02_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c4_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c5_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G02_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G06\\\\WellG06_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c4_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c5_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G06_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G07\\\\WellG07_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c4_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c5_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G07_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G02\\\\WellG02_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c4_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c5_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G02_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G06\\\\WellG06_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c4_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c5_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G06_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G07\\\\WellG07_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c3_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c4_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c5_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"cytoMeanIntensity\"\>", 
+           ",", "\<\"nucMeanIntensity\"\>"}], "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G07_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G02\\\\WellG02_0000c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c4_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0000c5_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0000c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0000c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0000c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G02_0000_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G06\\\\WellG06_0000c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c4_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0000c5_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0000c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0000c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0000c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G06_0000_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G07\\\\WellG07_0000c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c4_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0000c5_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0000c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0000c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0000c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G07_0000_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G02\\\\WellG02_0001c1_t20_to_tend.h5\"\>", 
+       ",", \
+"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\G02\\\\\
+WellG02_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c4_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02\\\\WellG02_0001c5_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G02WellG02_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G02_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G06\\\\WellG06_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c4_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06\\\\WellG06_0001c5_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G06WellG06_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G06_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\G07\\\\WellG07_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c3_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07\\\\WellG07_0001c4_t20_to_tend.h5\"\>", 
+       ",", \
+"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\G07\\\\\
+WellG07_0001c5_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+G07WellG07_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+          "}"}]}], "}"}]}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_G07_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C02\\\\WellC02_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0000c3_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C02_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C06\\\\WellC06_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0000c3_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C06_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C07\\\\WellC07_0000c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0000c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0000c3_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0000c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0000c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0000c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C07_0000_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C02\\\\WellC02_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0001c3_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C02_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C06\\\\WellC06_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0001c3_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C06_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C07\\\\WellC07_0001c1_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0001c2_t1_to_t19.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0001c3_t1_to_t19.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0001c1-2_t1_to_t19_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0001c1-2_t1_to_t19_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0001c1-2_t1_to_t19_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C07_0001_t1_to_t19.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C02\\\\WellC02_0000c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0000c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0000c3_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0000c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0000c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0000c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C02_0000_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C06\\\\WellC06_0000c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0000c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0000c3_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", \
+"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\C06WellC06_\
+0000c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0000c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0000c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C06_0000_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C07\\\\WellC07_0000c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0000c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0000c3_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0000c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0000c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0000c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C07_0000_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C02\\\\WellC02_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02\\\\WellC02_0001c3_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C02WellC02_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C02_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C06\\\\WellC06_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06\\\\WellC06_0001c3_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C06WellC06_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C06_0001_t20_to_tend.wl\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\
+\\C07\\\\WellC07_0001c1_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0001c2_t20_to_tend.h5\"\>", 
+       ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07\\\\WellC07_0001c3_t20_to_tend.h5\"\>"}], "}"}], 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0001c1-2_t20_to_tend_CSV-Table.csv\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0001c1-2_t20_to_tend_Tracking-Result.h5\"\>", 
+     ",", "\<\"E:\\\\raw_data\\\\2017_11_10_expt_15_SK_dose_response_h5\\\\\
+C07WellC07_0001c1-2_t20_to_tend_Object-Identities.h5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"{", 
+         RowBox[{"\<\"nucSize\"\>", ",", "\<\"nucMeanIntensity\"\>"}], 
+         "}"}]}], "}"}], "}"}], 
+     ",", "\<\"E:\\\\results\\\\2017_11_10_expt_15_SK_dose_response\\\\2018_\
+01_10_mathematica_output_C07_0001_t20_to_tend.wl\"\>"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.724648776811823*^9, 3.7246491182143173`*^9, 
+  3.724649407046837*^9, 3.724649522731901*^9, 3.72464955950984*^9, 
+  3.724652640500018*^9, 3.724653470011016*^9, 3.7246578240457335`*^9, 
+  3.724675671629081*^9, 3.7246803041918736`*^9, 
+  3.7246807379482746`*^9},ExpressionUUID->"6fb773f7-da87-4872-8c00-\
+efc480f73d00"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"processSite", "[", 
+     RowBox[{
+      RowBox[{"inputs", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "1"}], "]"}], "]"}], ",", 
+      RowBox[{"inputs", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "2"}], "]"}], "]"}], ",", 
+      RowBox[{"inputs", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "3"}], "]"}], "]"}], ",", 
+      RowBox[{"inputs", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "4"}], "]"}], "]"}], ",", 
+      RowBox[{"inputs", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "5"}], "]"}], "]"}], ",", 
+      RowBox[{"inputs", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "6"}], "]"}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"Length", "[", "inputs", "]"}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"10", ";;"}], "]"}], "]"}]}], "}"}]}], "]"}], ";"}]], "Input",\
+ExpressionUUID->"23f77740-827a-4173-88b1-004e99dd61dc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import","general",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"Out-of-bound \
+\\\\\\\\\\\\\\\"Stride\\\\\\\\\\\\\\\" value at positions {4, 5}, 1 will be \
+used instead.\\\\\\\"\\\"}]\\)\"",2,14,1,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246807604012785`*^9},ExpressionUUID->"6039600e-f872-4077-99b8-\
+4193999441f5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import","general",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"Out-of-bound \
+\\\\\\\\\\\\\\\"Stride\\\\\\\\\\\\\\\" value at positions {4, 5}, 1 will be \
+used instead.\\\\\\\"\\\"}]\\)\"",2,14,2,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724680764072774*^9},ExpressionUUID->"026bfe83-e2a2-4a69-83bd-\
+cd6a92ed5a80"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import","general",
+   "\"\\!\\(\\*RowBox[{\\\"\\\\\\\"Out-of-bound \
+\\\\\\\\\\\\\\\"Stride\\\\\\\\\\\\\\\" value at positions {4, 5}, 1 will be \
+used instead.\\\\\\\"\\\"}]\\)\"",2,14,3,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246807662274666`*^9},ExpressionUUID->"9fe5f76c-1e4a-4488-aa11-\
+9b147478225e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
+\\\"general\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246807662494574`*^9},ExpressionUUID->"a002f630-e149-47fe-8d1c-\
+d9000763eac3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import","nffil",
+   "\"File not found during \\!\\(\\*RowBox[{\\\"Import\\\"}]\\).\"",2,14,
+   4678,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866610697*^9},ExpressionUUID->"3f256c0a-1142-4a22-9c5b-\
+d9260405c89b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import","nffil",
+   "\"File not found during \\!\\(\\*RowBox[{\\\"Import\\\"}]\\).\"",2,14,
+   4679,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866632712*^9},ExpressionUUID->"667ca7d2-dd7b-4c17-891e-\
+8bf247b12d45"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"$Failed\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,14,4680,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866655728*^9},ExpressionUUID->"85b2c6d3-f9a2-43d0-903f-\
+fce3f9730666"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Range","range",
+   "\"Range specification in \\!\\(\\*RowBox[{\\\"Range\\\", \\\"[\\\", \
+RowBox[{\\\"$Failed\\\", \\\"\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\
+\[RightDoubleBracket]\\\"}], \\\"]\\\"}]\\) does not have appropriate bounds.\
+\"",2,14,4681,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928666767435`*^9},ExpressionUUID->"0928c66e-1fd8-4a6a-afc5-\
+bd48796f24fb"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"2\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"-\\\", \\\"1\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"$Failed\\\"}]\\).\"",2,14,4682,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928666967583`*^9},ExpressionUUID->"76d18477-db31-4192-abca-\
+8b7251e03ffa"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"2\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"-\\\", \\\"1\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"$Failed\\\"}]\\).\"",2,14,4683,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72469286671577*^9},ExpressionUUID->"2e8006a9-460b-44b3-8384-02866f85f91e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "AssociationMap","invrp",
+   "\"The argument \\!\\(\\*RowBox[{\\\"$Failed\\\", \\\"\[LeftDoubleBracket]\
+\\\", RowBox[{RowBox[{\\\"2\\\", \\\";;\\\", \\\"All\\\"}], \\\",\\\", \
+\\\"3\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a valid Association or \
+a list.\"",2,14,4684,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866734784*^9},ExpressionUUID->"f174e35c-ff98-42c0-9d27-\
+06f03c035869"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import","nffil",
+   "\"File not found during \\!\\(\\*RowBox[{\\\"Import\\\"}]\\).\"",2,14,
+   4685,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928667557993`*^9},ExpressionUUID->"a61a05e3-e8bd-4e5f-a180-\
+a6c19d23e528"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
+\\\"nffil\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4686,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928667738123`*^9},ExpressionUUID->"c400f3bc-f74a-4fb0-bf33-\
+e37b05f48f7f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Flatten","normal",
+   "\"Nonatomic expression expected at position \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Flatten\\\", \
+\\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}]\\).\"",2,14,4687,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866795827*^9},ExpressionUUID->"1f027123-3e38-4a76-879d-\
+60a70ce41245"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ArrayReshape","listrp",
+   "\"List or SparseArray or StructuredArray expected at position \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\
+\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2160\\\", \\\",\\\", \
+\\\"2560\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\).\"",2,14,4688,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928668198442`*^9},ExpressionUUID->"b3102338-ce4c-4fc7-b66c-\
+180a340ad383"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Image","imgarray",
+   "\"The specified argument \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\
+\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2160\\\", \\\",\\\", \
+\\\"2560\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\) should be an array of rank 2 or \
+3 with machine-sized numbers.\"",2,14,4689,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928668388567`*^9},ExpressionUUID->"55efcda0-f4da-41ba-a670-\
+7cde501a162f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Flatten","normal",
+   "\"Nonatomic expression expected at position \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Flatten\\\", \
+\\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}]\\).\"",2,14,4690,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928668588715`*^9},ExpressionUUID->"650fa751-d99b-4043-96be-\
+9c030f6bd731"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ArrayReshape","listrp",
+   "\"List or SparseArray or StructuredArray expected at position \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\
+\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\).\"",2,14,4691,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866878886*^9},ExpressionUUID->"6511f840-cd5a-415a-8720-\
+d5e0d4bb366a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Image","imgarray",
+   "\"The specified argument \\!\\(\\*RowBox[{\\\"Transpose\\\", \\\"[\\\", \
+RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Flatten\\\", \
+\\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"2560\\\", \\\",\\\", \\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \
+\\\"]\\\"}]\\) should be an array of rank 2 or 3 with machine-sized \
+numbers.\"",2,14,4692,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866898899*^9},ExpressionUUID->"8a8386e2-59a9-4d55-8caf-\
+c767db3dfc1e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Symbol","argx",
+   "\"\\!\\(\\*RowBox[{\\\"Symbol\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\
+\\\"}]\\) arguments; 1 argument is expected.\"",2,14,4693,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928669179125`*^9},ExpressionUUID->"bba465aa-cce7-4e08-a16d-\
+e4eb3fdf2b76"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Symbol","argx",
+   "\"\\!\\(\\*RowBox[{\\\"Symbol\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\
+\\\"}]\\) arguments; 1 argument is expected.\"",2,14,4694,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928669419518`*^9},ExpressionUUID->"c8c4c14b-a18e-44fd-953c-\
+71e35a2d515f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Symbol","argx",
+   "\"\\!\\(\\*RowBox[{\\\"Symbol\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\
+\\\"}]\\) arguments; 1 argument is expected.\"",2,14,4695,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866960943*^9},ExpressionUUID->"b750469d-4d46-4c26-af9d-\
+1505c130cbab"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Symbol\\\", \\\"::\\\", \
+\\\"argx\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4696,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692866986961*^9},ExpressionUUID->"e9ed7516-1086-442a-b490-\
+bcf93970fb12"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ImageData","imginv",
+   "\"Expecting an image or graphics instead of \
+\\!\\(\\*RowBox[{\\\"Image\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Transpose\\\", \
+\\\"[\\\", RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,14,4697,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867019009*^9},ExpressionUUID->"74754dc1-2974-42d2-91a3-\
+9869c3520240"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ComponentMeasurements","invarg1",
+   "\"Expecting a valid label matrix, an image, or a list of an image and a \
+label matrix instead of \\!\\(\\*RowBox[{\\\"ImageData\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Image\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Transpose\\\", \
+\\\"[\\\", RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,14,4698,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928670570107`*^9},ExpressionUUID->"30eff58d-b6e1-4fd2-99cf-\
+3c3024d8f41f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Range","range",
+   "\"Range specification in \\!\\(\\*RowBox[{\\\"Range\\\", \\\"[\\\", \
+RowBox[{\\\"Association\\\", \\\"[\\\", RowBox[{\\\"Flatten\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"processChannelToAssociation$78154406\\\", \\\"[\\\", \
+RowBox[{\\\"#1\\\", \\\",\\\", RowBox[{\\\"$Failed\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]}], \\\"]\
+\\\"}], \\\"&\\\"}], \\\")\\\"}], \\\"/@\\\", \
+\\\"allChannelsWithQuantities$78154406\\\"}], \\\"]\\\"}], \\\"]\\\"}], \\\"]\
+\\\"}]\\) does not have appropriate bounds.\"",2,14,4699,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928670790257`*^9},ExpressionUUID->"e14125cc-cc1d-4ad2-a455-\
+64a9737018b7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"$Failed\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,14,4700,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867100041*^9},ExpressionUUID->"d2524e83-0c56-483b-8243-\
+d20560438145"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Range","range",
+   "\"Range specification in \\!\\(\\*RowBox[{\\\"Range\\\", \\\"[\\\", \
+RowBox[{\\\"$Failed\\\", \\\"\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\
+\[RightDoubleBracket]\\\"}], \\\"]\\\"}]\\) does not have appropriate bounds.\
+\"",2,14,4701,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867120055*^9},ExpressionUUID->"04d42809-12b4-4816-93aa-\
+a8c84e111b69"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Range\\\", \\\"::\\\", \
+\\\"range\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4702,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928671571026`*^9},ExpressionUUID->"1900cf23-1293-4d68-bf81-\
+35d3e2c483b8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"2\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"-\\\", \\\"1\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"$Failed\\\"}]\\).\"",2,14,4703,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928672001114`*^9},ExpressionUUID->"36b0aa23-9d8a-490c-9d04-\
+1aece03e2345"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"take\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4704,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928672301555`*^9},ExpressionUUID->"8e3cdaa4-508b-48c0-b32d-\
+1cd0aee23fd2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "AssociationMap","invrp",
+   "\"The argument \\!\\(\\*RowBox[{\\\"$Failed\\\", \\\"\[LeftDoubleBracket]\
+\\\", RowBox[{RowBox[{\\\"2\\\", \\\";;\\\", \\\"All\\\"}], \\\",\\\", \
+\\\"3\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a valid Association or \
+a list.\"",2,14,4705,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928672571526`*^9},ExpressionUUID->"5ba8c2a2-186e-4186-b316-\
+a7e3750428f8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Flatten","normal",
+   "\"Nonatomic expression expected at position \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Flatten\\\", \
+\\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}]\\).\"",2,14,4706,22028248363786372794,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928672761903`*^9},ExpressionUUID->"0b2e6a9b-2df5-4749-8e2f-\
+41ad3a3a08a3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Flatten\\\", \
+\\\"::\\\", \\\"normal\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,14,4707,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928672951784`*^9},ExpressionUUID->"0e034af9-0fae-42f1-b47b-\
+faa24653edcf"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ArrayReshape","listrp",
+   "\"List or SparseArray or StructuredArray expected at position \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\
+\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2160\\\", \\\",\\\", \
+\\\"2560\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\).\"",2,14,4708,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928673131914`*^9},ExpressionUUID->"83491295-c0f7-447b-866d-\
+76d2dcc84bc9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ArrayReshape\\\", \
+\\\"::\\\", \\\"listrp\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,14,4709,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928673322306`*^9},ExpressionUUID->"e0dd40f8-cfc3-4596-b955-\
+246a82327ce4"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Image","imgarray",
+   "\"The specified argument \\!\\(\\*RowBox[{\\\"ArrayReshape\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\
+\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2160\\\", \\\",\\\", \
+\\\"2560\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\) should be an array of rank 2 or \
+3 with machine-sized numbers.\"",2,14,4710,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928673522186`*^9},ExpressionUUID->"5fefec7f-bcbf-4d94-a889-\
+78ebeeb4c4ec"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Image\\\", \\\"::\\\", \
+\\\"imgarray\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4711,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928673722334`*^9},ExpressionUUID->"de9b9cea-5846-403b-9fef-\
+c08d755ed693"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ImageData","imginv",
+   "\"Expecting an image or graphics instead of \
+\\!\\(\\*RowBox[{\\\"Image\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Transpose\\\", \
+\\\"[\\\", RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,14,4712,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867392273*^9},ExpressionUUID->"04b4a286-88ad-459b-a6d1-\
+dbd1dab4ebf9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ComponentMeasurements","invarg1",
+   "\"Expecting a valid label matrix, an image, or a list of an image and a \
+label matrix instead of \\!\\(\\*RowBox[{\\\"ImageData\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Image\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Transpose\\\", \
+\\\"[\\\", RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,14,4713,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928674112606`*^9},ExpressionUUID->"79924728-d9cd-4231-b231-\
+fd1d0ff9fcba"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"$Failed\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,14,4714,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867430273*^9},ExpressionUUID->"8610d214-70d7-4b42-8300-\
+41400889ee9f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4715,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867449288*^9},ExpressionUUID->"57e5f5fe-f6cd-4a27-870a-\
+919ac7445eb3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "AssociationMap","invrp",
+   "\"The argument \\!\\(\\*RowBox[{\\\"$Failed\\\", \\\"\[LeftDoubleBracket]\
+\\\", RowBox[{RowBox[{\\\"2\\\", \\\";;\\\", \\\"All\\\"}], \\\",\\\", \
+\\\"3\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a valid Association or \
+a list.\"",2,14,4716,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928674683*^9},ExpressionUUID->"7f0a2b77-35fd-4c72-932f-1dac88c81da4"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"AssociationMap\\\", \
+\\\"::\\\", \\\"invrp\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,14,4717,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928674883137`*^9},ExpressionUUID->"fec550d0-7c2d-40c7-a754-\
+b8d9cdb07bc1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ImageData","imginv",
+   "\"Expecting an image or graphics instead of \
+\\!\\(\\*RowBox[{\\\"Image\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Transpose\\\", \
+\\\"[\\\", RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,14,4718,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867506343*^9},ExpressionUUID->"8eba18ee-bd5b-495d-a803-\
+46d1fb164a7d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ImageData\\\", \\\"::\\\
+\", \\\"imginv\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,14,4719,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928675263424`*^9},ExpressionUUID->"afbef851-ad55-4c63-ade5-\
+cc952ec404b2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ComponentMeasurements","invarg1",
+   "\"Expecting a valid label matrix, an image, or a list of an image and a \
+label matrix instead of \\!\\(\\*RowBox[{\\\"ImageData\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Image\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Transpose\\\", \
+\\\"[\\\", RowBox[{\\\"ArrayReshape\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Flatten\\\", \\\"[\\\", \\\"$Failed\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2560\\\", \\\",\\\", \
+\\\"2160\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"Bit16\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,14,4720,
+   22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724692867545382*^9},ExpressionUUID->"aebc3f0a-b335-42ab-b85b-\
+734b58b83d60"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ComponentMeasurements\\\
+\", \\\"::\\\", \\\"invarg1\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,14,4721,22028248363786372794,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7246928675643682`*^9},ExpressionUUID->"92299b65-3856-42f8-ac42-\
+1b3bb782cb1f"]
+}, Open  ]]
+},
+WindowSize->{1080, 741},
+WindowMargins->{{11, Automatic}, {58, Automatic}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 782, 17, 166, "Text",ExpressionUUID->"7ce0fddb-2182-47a0-a053-300f4a9cd414"],
+Cell[1343, 39, 1407, 34, 124, "Input",ExpressionUUID->"17736f6d-6ce3-4939-ac3d-93e144dd448e"],
+Cell[2753, 75, 15885, 376, 846, "Input",ExpressionUUID->"5a273957-352c-4d92-9b3d-470d18cd899f"],
+Cell[18641, 453, 6381, 168, 257, "Input",ExpressionUUID->"139bf5da-2ec0-4cd8-96f2-2661b52b79d2"],
+Cell[CellGroupData[{
+Cell[25047, 625, 209, 4, 28, "Input",ExpressionUUID->"3d1a057d-47c0-4a35-827b-a1d35dfefb45"],
+Cell[25259, 631, 53374, 1107, 6170, "Output",ExpressionUUID->"6fb773f7-da87-4872-8c00-efc480f73d00"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78670, 1743, 1045, 31, 48, "Input",ExpressionUUID->"23f77740-827a-4173-88b1-004e99dd61dc"],
+Cell[79718, 1776, 395, 9, 21, "Message",ExpressionUUID->"6039600e-f872-4077-99b8-4193999441f5"],
+Cell[80116, 1787, 393, 9, 21, "Message",ExpressionUUID->"026bfe83-e2a2-4a69-83bd-cd6a92ed5a80"],
+Cell[80512, 1798, 395, 9, 21, "Message",ExpressionUUID->"9fe5f76c-1e4a-4488-aa11-9b147478225e"],
+Cell[80910, 1809, 403, 9, 21, "Message",ExpressionUUID->"a002f630-e149-47fe-8d1c-d9000763eac3"],
+Cell[81316, 1820, 305, 8, 21, "Message",ExpressionUUID->"3f256c0a-1142-4a22-9c5b-d9260405c89b"],
+Cell[81624, 1830, 305, 8, 21, "Message",ExpressionUUID->"667ca7d2-dd7b-4c17-891e-8bf247b12d45"],
+Cell[81932, 1840, 404, 9, 21, "Message",ExpressionUUID->"85b2c6d3-f9a2-43d0-903f-fce3f9730666"],
+Cell[82339, 1851, 462, 10, 21, "Message",ExpressionUUID->"0928c66e-1fd8-4a6a-afc5-bd48796f24fb"],
+Cell[82804, 1863, 395, 10, 21, "Message",ExpressionUUID->"76d18477-db31-4192-abca-8b7251e03ffa"],
+Cell[83202, 1875, 390, 9, 21, "Message",ExpressionUUID->"2e8006a9-460b-44b3-8384-02866f85f91e"],
+Cell[83595, 1886, 483, 10, 21, "Message",ExpressionUUID->"f174e35c-ff98-42c0-9d27-06f03c035869"],
+Cell[84081, 1898, 307, 8, 21, "Message",ExpressionUUID->"a61a05e3-e8bd-4e5f-a180-a6c19d23e528"],
+Cell[84391, 1908, 404, 9, 21, "Message",ExpressionUUID->"c400f3bc-f74a-4fb0-bf33-e37b05f48f7f"],
+Cell[84798, 1919, 406, 10, 21, "Message",ExpressionUUID->"1f027123-3e38-4a76-879d-60a70ce41245"],
+Cell[85207, 1931, 591, 12, 21, "Message",ExpressionUUID->"b3102338-ce4c-4fc7-b66c-180a340ad383"],
+Cell[85801, 1945, 571, 11, 21, "Message",ExpressionUUID->"55efcda0-f4da-41ba-a670-7cde501a162f"],
+Cell[86375, 1958, 408, 10, 21, "Message",ExpressionUUID->"650fa751-d99b-4043-96be-9c030f6bd731"],
+Cell[86786, 1970, 589, 12, 21, "Message",ExpressionUUID->"6511f840-cd5a-415a-8720-d5e0d4bb366a"],
+Cell[87378, 1984, 622, 12, 21, "Message",ExpressionUUID->"8a8386e2-59a9-4d55-8caf-c767db3dfc1e"],
+Cell[88003, 1998, 364, 9, 21, "Message",ExpressionUUID->"bba465aa-cce7-4e08-a16d-e4eb3fdf2b76"],
+Cell[88370, 2009, 364, 9, 21, "Message",ExpressionUUID->"c8c4c14b-a18e-44fd-953c-71e35a2d515f"],
+Cell[88737, 2020, 362, 9, 21, "Message",ExpressionUUID->"b750469d-4d46-4c26-af9d-1505c130cbab"],
+Cell[89102, 2031, 401, 9, 21, "Message",ExpressionUUID->"e9ed7516-1086-442a-b490-bcf93970fb12"],
+Cell[89506, 2042, 687, 14, 21, "Message",ExpressionUUID->"74754dc1-2974-42d2-91a3-9869c3520240"],
+Cell[90196, 2058, 861, 16, 39, "Message",ExpressionUUID->"30eff58d-b6e1-4fd2-99cf-3c3024d8f41f"],
+Cell[91060, 2076, 808, 16, 39, "Message",ExpressionUUID->"e14125cc-cc1d-4ad2-a455-64a9737018b7"],
+Cell[91871, 2094, 404, 9, 21, "Message",ExpressionUUID->"d2524e83-0c56-483b-8243-d20560438145"],
+Cell[92278, 2105, 460, 10, 21, "Message",ExpressionUUID->"04d42809-12b4-4816-93aa-a8c84e111b69"],
+Cell[92741, 2117, 403, 9, 21, "Message",ExpressionUUID->"1900cf23-1293-4d68-bf81-35d3e2c483b8"],
+Cell[93147, 2128, 395, 10, 21, "Message",ExpressionUUID->"36b0aa23-9d8a-490c-9d04-1aece03e2345"],
+Cell[93545, 2140, 401, 9, 21, "Message",ExpressionUUID->"8e3cdaa4-508b-48c0-b32d-1cd0aee23fd2"],
+Cell[93949, 2151, 485, 10, 21, "Message",ExpressionUUID->"5ba8c2a2-186e-4186-b316-a7e3750428f8"],
+Cell[94437, 2163, 408, 10, 21, "Message",ExpressionUUID->"0b2e6a9b-2df5-4749-8e2f-41ad3a3a08a3"],
+Cell[94848, 2175, 406, 9, 21, "Message",ExpressionUUID->"0e034af9-0fae-42f1-b47b-faa24653edcf"],
+Cell[95257, 2186, 591, 12, 21, "Message",ExpressionUUID->"83491295-c0f7-447b-866d-76d2dcc84bc9"],
+Cell[95851, 2200, 411, 9, 21, "Message",ExpressionUUID->"e0dd40f8-cfc3-4596-b955-246a82327ce4"],
+Cell[96265, 2211, 571, 11, 21, "Message",ExpressionUUID->"5fefec7f-bcbf-4d94-a889-78ebeeb4c4ec"],
+Cell[96839, 2224, 406, 9, 21, "Message",ExpressionUUID->"de9b9cea-5846-403b-9fef-c08d755ed693"],
+Cell[97248, 2235, 687, 14, 21, "Message",ExpressionUUID->"04b4a286-88ad-459b-a6d1-dbd1dab4ebf9"],
+Cell[97938, 2251, 861, 16, 39, "Message",ExpressionUUID->"79924728-d9cd-4231-b231-fd1d0ff9fcba"],
+Cell[98802, 2269, 404, 9, 21, "Message",ExpressionUUID->"8610d214-70d7-4b42-8300-41400889ee9f"],
+Cell[99209, 2280, 400, 9, 21, "Message",ExpressionUUID->"57e5f5fe-f6cd-4a27-870a-919ac7445eb3"],
+Cell[99612, 2291, 479, 9, 21, "Message",ExpressionUUID->"7f0a2b77-35fd-4c72-932f-1dac88c81da4"],
+Cell[100094, 2302, 412, 9, 21, "Message",ExpressionUUID->"fec550d0-7c2d-40c7-a754-b8d9cdb07bc1"],
+Cell[100509, 2313, 687, 14, 21, "Message",ExpressionUUID->"8eba18ee-bd5b-495d-a803-46d1fb164a7d"],
+Cell[101199, 2329, 408, 9, 21, "Message",ExpressionUUID->"afbef851-ad55-4c63-ade5-cc952ec404b2"],
+Cell[101610, 2340, 859, 16, 39, "Message",ExpressionUUID->"aebc3f0a-b335-42ab-b85b-734b58b83d60"],
+Cell[102472, 2358, 421, 9, 21, "Message",ExpressionUUID->"92299b65-3856-42f8-ac42-1b3bb782cb1f"]
+}, Open  ]]
+}
+]
+*)
+
