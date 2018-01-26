@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2338350,      40597]
-NotebookOptionsPosition[   2333235,      40507]
-NotebookOutlinePosition[   2333604,      40523]
-CellTagsIndexPosition[   2333561,      40520]
+NotebookDataLength[   2501649,      43708]
+NotebookOptionsPosition[   2480673,      43455]
+NotebookOutlinePosition[   2481044,      43471]
+CellTagsIndexPosition[   2481001,      43468]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -769,7 +769,7 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`trackNum$$ = 304, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`trackNum$$ = 310, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
@@ -802,7 +802,7 @@ HvOEpzzjOS94ySte84a3vOM9H/jIJz7zhX/5j6984zs/+MkvfvPn6A9EYIIQ
 lGAEJwQhCUVowhCWcIQnAhGJRGSiEJVoRCcGMYlFbOIQl3jEJwEJSURikpCU
 ZCQnBSlJRWrSkJZ0pCcDGclEZrKQlWxkJwc5yUVu8pCXfOSnAAWD/P8H+h8k
 wYyu
-      "]}}, Typeset`size$$ = {360., {109., 114.}}, Typeset`update$$ = 0, 
+      "]}}, Typeset`size$$ = {698., {41., 12.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`trackNum$89974$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -853,7 +853,7 @@ ZCQnBSlJRWrSkJZ0pCcDGclEZrKQlWxkJwc5yUVu8pCXfOSnAAWD/P8H+h8k
 wYyu
          "]}}, "Options" :> {ControlType -> Manipulator}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {168., 175.}},
+     ImageSizeCache->{749., {70., 77.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -867,7 +867,383 @@ wYyu
  CellChangeTimes->{
   3.7246991271716795`*^9, {3.724699241643221*^9, 
    3.724699260384407*^9}},ExpressionUUID->"07a2f860-3341-471c-b86e-\
-8b98c588a96b"]
+8b98c588a96b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"310\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"311\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20\\\"}], \\\"]\\\"}]\\).\"",2,3,
+   1,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822428589754`*^9},ExpressionUUID->"ed0f715c-150c-4610-94ab-\
+db326905ee15"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"310\\\", \
+\\\";;\\\", \\\"311\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,2,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822428919983`*^9},ExpressionUUID->"f1ab07f8-c23c-477d-9794-\
+4707b0a8d4de"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"310\\\", \
+\\\";;\\\", \\\"311\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,3,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243043125*^9},ExpressionUUID->"10b9483e-b51c-4ce7-a440-\
+a3f9cbb2d3f0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"310\\\", \
+\\\";;\\\", \\\"311\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,4,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243063119*^9},ExpressionUUID->"73b3291f-e3f1-458c-ba96-\
+d95d20ac87d6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3,5,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822430881567`*^9},ExpressionUUID->"f9057555-db34-42f7-ab96-\
+d68bead44c31"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"310\\\", \
+\\\";;\\\", \\\"311\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) \
+is not a list of numbers or pairs of numbers.\"",2,3,6,22028827879537901430,
+   "Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243180226*^9},ExpressionUUID->"86343445-e4c3-4858-84f1-\
+40e234b6e321"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"310\\\", \
+\\\";;\\\", \\\"311\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) \
+is not a list of numbers or pairs of numbers.\"",2,3,7,22028827879537901430,
+   "Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243248248*^9},ExpressionUUID->"acc57597-ef73-4522-89f3-\
+4d0bf0735e3e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"310\\\", \
+\\\";;\\\", \\\"311\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) \
+is not a list of numbers or pairs of numbers.\"",2,3,8,22028827879537901430,
+   "Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822433162932`*^9},ExpressionUUID->"0155d548-b652-42a1-a6e9-\
+4a74307568a1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,3,9,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243358323*^9},ExpressionUUID->"fa5c1bf4-373f-4a49-8265-\
+ae95aa27f13d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,136,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819817850283*^9},ExpressionUUID->"91d884f9-fe85-488b-a235-\
+8bc05aad944d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","argm",
+   "\"\\!\\(\\*RowBox[{\\\"Part\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\\\
+\"}]\\) arguments; \\!\\(\\*RowBox[{\\\"1\\\"}]\\) or more arguments are \
+expected.\"",2,716,137,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819817886617*^9},ExpressionUUID->"ebe0793c-dc69-4399-9a96-\
+fe477073b179"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Keys","invrl",
+   "\"The argument \\!\\(\\*RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}]\\) \
+is not a valid Association or a list of rules.\"",2,716,138,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819817923644*^9},ExpressionUUID->"7084ef73-5c9e-481e-99e7-\
+2545a323f080"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"310\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"311\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\).\"",2,
+   716,139,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198179456596`*^9},ExpressionUUID->"2198e34a-fa50-44c6-b235-\
+9b2adeecc72f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,140,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198179866886`*^9},ExpressionUUID->"69cdac35-14b4-49aa-b1c9-\
+fe6bb11eb031"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,141,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198180247164`*^9},ExpressionUUID->"8517955f-05e3-4e6a-8966-\
+47b111d24f6b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,142,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198180447283`*^9},ExpressionUUID->"ba2629a9-fb05-4409-a0e5-\
+d345721f0e51"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,143,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818065744*^9},ExpressionUUID->"af711359-55a3-47d1-a74e-\
+5fca34444fac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"310\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"310\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"311\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,144,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818105773*^9},ExpressionUUID->"ad5acdb0-eb16-4f07-91d3-\
+ab2dce200be8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"310\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"310\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"311\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,145,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818178913*^9},ExpressionUUID->"97e8dd80-82fa-47e2-bc8a-\
+e061f20cd5be"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"310\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"310\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"311\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,146,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818210163*^9},ExpressionUUID->"aca40735-4fe3-45f6-a571-\
+3fd49bcc8b47"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,147,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818225788*^9},ExpressionUUID->"44759406-b8c2-4f0c-ac39-\
+dea518171be8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"310\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"310\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"311\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,716,148,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818288288*^9},ExpressionUUID->"fb7c1d58-ef1b-41ce-b96d-\
+9f57d871afd6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"310\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"310\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"311\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,716,149,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198183664165`*^9},ExpressionUUID->"a40ea111-1b0f-4f27-aefc-\
+dc64cde548cc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"310\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"310\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"311\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,716,150,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198184601655`*^9},ExpressionUUID->"e958faa4-0646-4e2d-8dee-\
+12aff7399de2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,716,151,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481981847579*^9},ExpressionUUID->"749f4ace-25fb-4743-85e8-162fbd367c2d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -952,7 +1328,7 @@ HvOEpzzjOS94ySte84a3vOM9H/jIJz7zhX/5j6984zs/+MkvfvPn6A9EYIIQ
 lGAEJwQhCUVowhCWcIQnAhGJRGSiEJVoRCcGMYlFbOIQl3jEJwEJSURikpCU
 ZCQnBSlJRWrSkJZ0pCcDGclEZrKQlWxkJwc5yUVu8pCXfOSnAAWD/P8H+h8k
 wYyu
-      "]}}, Typeset`size$$ = {360., {109., 114.}}, Typeset`update$$ = 0, 
+      "]}}, Typeset`size$$ = {770., {22., 12.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`trackNum$84107$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1002,7 +1378,7 @@ ZCQnBSlJRWrSkJZ0pCcDGclEZrKQlWxkJwc5yUVu8pCXfOSnAAWD/P8H+h8k
 wYyu
          "]}}, "Options" :> {ControlType -> Manipulator}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {168., 175.}},
+     ImageSizeCache->{821., {60., 67.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1020,7 +1396,377 @@ wYyu
    3.7246919532040434`*^9, 3.7246919901490393`*^9}, {3.724692289172429*^9, 
    3.7246923483297205`*^9}, {3.7246925006487494`*^9, 3.7246925144573746`*^9}, 
    3.72469469834505*^9},ExpressionUUID->"fc0371a2-86d4-4200-a255-\
-81caab732495"]
+81caab732495"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"75\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"76\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20\\\"}], \\\"]\\\"}]\\).\"",2,3,
+   10,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243481409*^9},ExpressionUUID->"f4a44a5b-ff5d-444f-a9fe-\
+693c823e9564"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"75\\\", \\\";;\\\", \
+\\\"76\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,3,
+   11,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243504425*^9},ExpressionUUID->"37e53ad7-cbe9-4e32-9a74-\
+3811129dd983"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"75\\\", \\\";;\\\", \
+\\\"76\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,3,
+   12,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822435994916`*^9},ExpressionUUID->"ab49727d-1600-44aa-b934-\
+0119145dc163"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"75\\\", \\\";;\\\", \
+\\\"76\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,3,
+   13,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822436155024`*^9},ExpressionUUID->"5ac685c0-0554-42c4-b72b-\
+30c0ea262a7b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3,14,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822436445227`*^9},ExpressionUUID->"f3471756-4f2a-4307-8cf0-\
+62b0776c2616"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"\\\\\\\"nucSize\\\\\
+\\\"\\\", \\\",\\\", RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucSize\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"75\\\", \\\";;\\\", \
+\\\"76\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list \
+of numbers or pairs of numbers.\"",2,3,15,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243686552*^9},ExpressionUUID->"1b881294-23d1-4782-a0d2-\
+d940c70bea1d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"\\\\\\\"nucSize\\\\\
+\\\"\\\", \\\",\\\", RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucSize\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"75\\\", \\\";;\\\", \
+\\\"76\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list \
+of numbers or pairs of numbers.\"",2,3,16,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243837657*^9},ExpressionUUID->"7b160cd3-2ef9-4686-9988-\
+aa2545b35d8f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \\\"\\\\\\\"nucSize\\\\\
+\\\"\\\", \\\",\\\", RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucSize\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"75\\\", \\\";;\\\", \
+\\\"76\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list \
+of numbers or pairs of numbers.\"",2,3,17,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822439337234`*^9},ExpressionUUID->"2642e212-2e9b-4c64-b3bc-\
+abcbc5746ca8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,3,18,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782243947734*^9},ExpressionUUID->"9322e98b-6241-44ce-ace9-\
+059a7de978ae"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,152,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198185695405`*^9},ExpressionUUID->"43a01d20-350b-41e4-a7f6-\
+e0094046e013"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","argm",
+   "\"\\!\\(\\*RowBox[{\\\"Part\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\\\
+\"}]\\) arguments; \\!\\(\\*RowBox[{\\\"1\\\"}]\\) or more arguments are \
+expected.\"",2,716,153,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818600792*^9},ExpressionUUID->"7d1c385f-dfc4-43e5-8712-\
+41609597c4fc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Keys","invrl",
+   "\"The argument \\!\\(\\*RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}]\\) \
+is not a valid Association or a list of rules.\"",2,716,154,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818632042*^9},ExpressionUUID->"b58a491f-eb78-49f8-a794-\
+464cf77d92da"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"75\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"76\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Keys\\\", \\\"[\\\", \
+RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\).\"",2,716,155,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198186632905`*^9},ExpressionUUID->"0c318327-a9e3-4769-b640-\
+efa415d40c1e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,156,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198186945405`*^9},ExpressionUUID->"d2cc1e7c-d8c3-41fe-9fd1-\
+06b26e4f9102"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,157,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198187257924`*^9},ExpressionUUID->"892bb4b5-f09c-4f61-a7d7-\
+6c73121ff678"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,158,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818757041*^9},ExpressionUUID->"ff598099-fc6b-4d9e-b774-\
+14e793d69b21"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,159,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818788292*^9},ExpressionUUID->"55ff6c05-e784-4d53-9f52-\
+77c489cbb80a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"75\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"76\\\", \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,160,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818803917*^9},ExpressionUUID->"a504078d-fdc2-4185-8a22-\
+4f6b115f45e5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"75\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"76\\\", \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,161,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818850793*^9},ExpressionUUID->"11b7dc1e-8f4a-4608-b741-\
+33af7afce667"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"75\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"76\\\", \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,162,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818882042*^9},ExpressionUUID->"fa15f418-246c-4e0c-909f-\
+9965f5d12bc7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,163,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819818897668*^9},ExpressionUUID->"c4f45ad1-926b-4a2c-9770-\
+43e9a3888a75"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\\\", \\\",\\\", \\\"2\\\", \\\",\
+\\\", \\\"76\\\", \\\",\\\", \\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) \
+is not a list of numbers or pairs of numbers.\"",2,716,164,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198189445424`*^9},ExpressionUUID->"ed7e4196-757e-4f83-ac91-\
+afd71de9dcac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\\\", \\\",\\\", \\\"2\\\", \\\",\
+\\\", \\\"76\\\", \\\",\\\", \\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) \
+is not a list of numbers or pairs of numbers.\"",2,716,165,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819819007043*^9},ExpressionUUID->"55c01eed-2cd6-4bb8-822e-\
+5fe6752637e9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"75\\\", \\\",\\\", \\\"2\\\", \\\",\
+\\\", \\\"76\\\", \\\",\\\", \\\"\\\\\\\"nucSize\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) \
+is not a list of numbers or pairs of numbers.\"",2,716,166,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819819100794*^9},ExpressionUUID->"eef653df-ca50-4597-981c-\
+695c9af45a43"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,716,167,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481981911642*^9},ExpressionUUID->"f776c1f8-ff7d-469b-a395-e0fb68bc415c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1097,7 +1843,7 @@ D3nEY57wlGc85wUvecVr3vCWd7znAx/5xGe+8JVvfOcHP/nFb/4c/YEITBCC
 EozghCAkoQhNGMISjvBEICKRiEwUohKN6MQgJrGITRziEo/4JCAhiUhMEpKS
 jOSkICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKEwRilIs
 yP//ov8BdPeOFg==
-      "]}}, Typeset`size$$ = {360., {109., 114.}}, Typeset`update$$ = 0, 
+      "]}}, Typeset`size$$ = {824.5, {41., 12.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`trackNum$39793$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1144,7 +1890,7 @@ EozghCAkoQhNGMISjvBEICKRiEwUohKN6MQgJrGITRziEo/4JCAhiUhMEpKS
 jOSkICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKEwRilIs
 yP//ov8BdPeOFg==
          "]}}, "Options" :> {ControlType -> Slider}, "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {155., 162.}},
+     ImageSizeCache->{876., {70., 77.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1157,7 +1903,338 @@ yP//ov8BdPeOFg==
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{3.7246831100773067`*^9, 3.7246831526846437`*^9, 
   3.724684945130788*^9},ExpressionUUID->"a7c4678c-6026-4aa9-85dc-\
-dac12d4af997"]
+dac12d4af997"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"1\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"6\\\"}]\\) in \\!\\(\\*RowBox[{\\\"tracksGreaterThan20\\\
+\"}]\\).\"",2,3,19,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244032793*^9},ExpressionUUID->"44fa71e0-bcd2-4f9d-a639-\
+5f7912da10c5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"1\\\", \
+\\\";;\\\", \\\"6\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,20,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822440678186`*^9},ExpressionUUID->"7a8b32dd-a8c9-46bc-97af-\
+7bfd7c2de538"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"1\\\", \
+\\\";;\\\", \\\"6\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,21,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822441568804`*^9},ExpressionUUID->"ddc13c4b-dff9-478e-ab63-\
+815551830132"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"1\\\", \
+\\\";;\\\", \\\"6\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,22,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244159882*^9},ExpressionUUID->"8ced3afc-701f-4da9-94ed-\
+a43fdcd50b4f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3,23,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822441929045`*^9},ExpressionUUID->"77c433d0-387a-4134-bac9-\
+9f3f2105c9b5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"3.`\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \\\",\\\", \\\"tracksGreaterThan20\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\"f2site1tend\\\", \
+\\\",\\\", \\\"3\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \
+\\\",\\\", RowBox[{\\\"1\\\", \\\";;\\\", \\\"6\\\"}]}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,24,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244224927*^9},ExpressionUUID->"1d564b4e-cd60-40bb-90c6-\
+fcde610422b2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"3.`\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \\\",\\\", \\\"tracksGreaterThan20\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\"f2site1tend\\\", \
+\\\",\\\", \\\"3\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \
+\\\",\\\", RowBox[{\\\"1\\\", \\\";;\\\", \\\"6\\\"}]}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,25,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822443209953`*^9},ExpressionUUID->"c105bd45-d0a9-4032-8992-\
+01c9b1052c73"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f2site1tend\\\", \\\",\\\", \\\"3.`\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \\\",\\\", \\\"tracksGreaterThan20\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\"f2site1tend\\\", \
+\\\",\\\", \\\"3\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\", \
+\\\",\\\", RowBox[{\\\"1\\\", \\\";;\\\", \\\"6\\\"}]}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,26,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822443990483`*^9},ExpressionUUID->"8db043c3-5715-468b-bad6-\
+0cba8b20abd9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,3,27,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244456089*^9},ExpressionUUID->"eb686e2e-b435-43cf-a77f-\
+f695f78eb0d1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"1\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"6\\\"}]\\) in \\!\\(\\*RowBox[{\\\"tracksGreaterThan20\\\
+\"}]\\).\"",2,716,168,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481981914767*^9},ExpressionUUID->"8d2a2c72-fda9-486a-ac2b-6cffa73247a3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,169,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198191789412`*^9},ExpressionUUID->"498d13e5-4bbc-4c92-a1f5-\
+12dd7981562e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"tracksGreaterThan20\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,170,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198191789412`*^9},ExpressionUUID->"e0e5c59a-a6b7-4e4f-bd42-\
+ddfe7d26889b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"tracksGreaterThan20\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,171,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481981921017*^9},ExpressionUUID->"dd159e19-4dc7-4aec-9329-1eefc4c71a45"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,172,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819819241442*^9},ExpressionUUID->"b5cc3b5a-e0e9-4741-bd94-\
+58d06d59dd99"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"6\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,
+   173,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481981927267*^9},ExpressionUUID->"513239ec-e62d-441e-81b5-6b469e1bf9f0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"6\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,
+   174,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481981933517*^9},ExpressionUUID->"e74176f8-eff7-4d4c-ace9-540a706567f6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"6\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,
+   175,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198193507957`*^9},ExpressionUUID->"c0cabc77-e642-4263-997f-\
+d33dabeff507"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,176,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198193820457`*^9},ExpressionUUID->"15143164-61be-40e0-809c-\
+4710edaa439c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"tracksGreaterThan20\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"tracksGreaterThan20\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"3.`\\\", \\\",\\\", \
+RowBox[{\\\"tracksGreaterThan20\\\", \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"6\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of \
+numbers or pairs of numbers.\"",2,716,177,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198194132957`*^9},ExpressionUUID->"b5b79a77-35e9-487b-82df-\
+1d3f983dba4e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"tracksGreaterThan20\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"tracksGreaterThan20\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"3.`\\\", \\\",\\\", \
+RowBox[{\\\"tracksGreaterThan20\\\", \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"6\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of \
+numbers or pairs of numbers.\"",2,716,178,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198194914217`*^9},ExpressionUUID->"c63ad2dd-d3da-4611-a142-\
+7d9e0f403991"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"tracksGreaterThan20\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"tracksGreaterThan20\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"3.`\\\", \\\",\\\", \
+RowBox[{\\\"tracksGreaterThan20\\\", \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"6\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of \
+numbers or pairs of numbers.\"",2,716,179,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198195695467`*^9},ExpressionUUID->"354740d1-4485-402f-b2a3-\
+477926b51062"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,716,180,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198195851727`*^9},ExpressionUUID->"25ea97a9-74db-4c2b-99ae-\
+0a109fc552ad"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -1240,7 +2317,7 @@ D3nEY57wlGc85wUvecVr3vCWd7znAx/5xGe+8JVvfOcHP/nFb/4c/YEITBCC
 EozghCAkoQhNGMISjvBEICKRiEwUohKN6MQgJrGITRziEo/4JCAhiUhMEpKS
 jOSkICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKEwRilIs
 yP//ov8BdPeOFg==
-      "]}}, Typeset`size$$ = {360., {111., 118.}}, Typeset`update$$ = 0, 
+      "]}}, Typeset`size$$ = {878.7, {144., 15.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`trackNum$42276$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1288,7 +2365,7 @@ EozghCAkoQhNGMISjvBEICKRiEwUohKN6MQgJrGITRziEo/4JCAhiUhMEpKS
 jOSkICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKEwRilIs
 yP//ov8BdPeOFg==
          "]}}, "Options" :> {ControlType -> Slider}, "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {158., 165.}},
+     ImageSizeCache->{930., {123., 130.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1302,7 +2379,1195 @@ yP//ov8BdPeOFg==
  CellChangeTimes->{{3.7246837101393185`*^9, 3.724683724971632*^9}, 
    3.724684951093484*^9, 
    3.7246869479917574`*^9},ExpressionUUID->"3346ee41-0626-47fe-8e8b-\
-ba771d41b01f"]
+ba771d41b01f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"98\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"103\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20\\\"}], \\\"]\\\"}]\\).\"",2,3,
+   28,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822444731*^9},ExpressionUUID->"c17347ac-9d6a-4de1-8805-a6e55c7df84e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", RowBox[{\\\"98\\\", \\\";;\\\", \
+\\\"103\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,
+   3,29,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244503121*^9},ExpressionUUID->"3b1435cf-a509-4984-a680-\
+98f2b68424b7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", RowBox[{\\\"98\\\", \\\";;\\\", \
+\\\"103\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,
+   3,30,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822445761952`*^9},ExpressionUUID->"adfb8047-85c2-4ad2-a662-\
+4a62634b0732"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", RowBox[{\\\"98\\\", \\\";;\\\", \
+\\\"103\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,
+   3,31,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822445861797`*^9},ExpressionUUID->"9287612c-fc02-4ba3-ae8c-\
+3f84ddfdab02"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3,32,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822446091948`*^9},ExpressionUUID->"0200b3fe-71c1-4938-9da7-\
+c7dc5b6780ee"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", RowBox[{\\\"f2site1tend\\\", \
+\\\",\\\", RowBox[{\\\"98\\\", \\\";;\\\", \\\"103\\\"}]}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,33,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822446372147`*^9},ExpressionUUID->"9f5fd83b-47fe-4286-a203-\
+f0dbdd5109de"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", RowBox[{\\\"f2site1tend\\\", \
+\\\",\\\", RowBox[{\\\"98\\\", \\\";;\\\", \\\"103\\\"}]}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,34,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244725277*^9},ExpressionUUID->"a76b69d8-85af-4688-81af-\
+14960ecddbb4"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f2site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", RowBox[{\\\"f2site1tend\\\", \
+\\\",\\\", RowBox[{\\\"98\\\", \\\";;\\\", \\\"103\\\"}]}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,35,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822447883196`*^9},ExpressionUUID->"4c78e34b-159c-45a2-b80c-\
+33bfb892dbfe"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,3,36,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822447913227`*^9},ExpressionUUID->"588e14d5-b8d8-4df2-bf85-\
+6732e0694d15"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,181,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198196164217`*^9},ExpressionUUID->"e7c7a98b-53ce-4f0c-95cb-\
+5593ad862f3b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","argm",
+   "\"\\!\\(\\*RowBox[{\\\"Part\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\\\
+\"}]\\) arguments; \\!\\(\\*RowBox[{\\\"1\\\"}]\\) or more arguments are \
+expected.\"",2,716,182,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198196476727`*^9},ExpressionUUID->"3594587f-b0f4-449e-ac21-\
+39fb8ec26af3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Keys","invrl",
+   "\"The argument \\!\\(\\*RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}]\\) \
+is not a valid Association or a list of rules.\"",2,716,183,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819819663297*^9},ExpressionUUID->"1366817e-4442-42e3-9fa8-\
+c881e5249abc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"98\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"103\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\).\"",2,
+   716,184,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198196945467`*^9},ExpressionUUID->"41bf46f0-a91a-4b4e-b720-\
+a8af8a0ecfb3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,185,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198197257977`*^9},ExpressionUUID->"45fb52e6-15bf-45f1-9979-\
+5f6157e178a6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,186,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198197570486`*^9},ExpressionUUID->"db4d0401-4b0c-4c04-9b89-\
+323d8fc70d03"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,187,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198197882986`*^9},ExpressionUUID->"6a292479-c861-4be9-a041-\
+c7a763b12f46"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,188,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198198195486`*^9},ExpressionUUID->"f680ff17-30a0-46eb-90e3-\
+9bc6fbb4ee00"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,189,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819819850799*^9},ExpressionUUID->"e48884d5-ec14-4c23-9d2c-\
+888d82c86564"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MapThread","mptd",
+   "\"Object \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]\\) at \
+position {2, \\!\\(\\*RowBox[{\\\"1\\\"}]\\)} in \
+\\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3\\\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) has only \
+\\!\\(\\*RowBox[{\\\"0\\\"}]\\) of required \\!\\(\\*RowBox[{\\\"1\\\"}]\\) \
+dimensions.\"",2,716,190,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198198820486`*^9},ExpressionUUID->"9e14ce52-8e15-46e5-86c5-\
+bd83d87f0cc6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MapThread","mptd",
+   "\"Object \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"103\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}]\\) at position {2, \\!\\(\\*RowBox[{\\\"1\\\"}]\\)} \
+in \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) has only \\!\\(\\*RowBox[{\\\"0\\\"}]\\) of required \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) dimensions.\"",2,716,191,22028827879537901430,
+   "Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819819913299*^9},ExpressionUUID->"5e8975db-dc30-4adf-b7d7-\
+2f7fcedc564e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,192,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198199445496`*^9},ExpressionUUID->"3695bd13-19c5-408b-b8c5-\
+620924a3cbb6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MapThread","mptd",
+   "\"Object \\!\\(\\*RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`16.\\\
+\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]\\) at \
+position {2, \\!\\(\\*RowBox[{\\\"1\\\"}]\\)} in \
+\\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`16.\\\
+\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`16.\\\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) has only \
+\\!\\(\\*RowBox[{\\\"0\\\"}]\\) of required \\!\\(\\*RowBox[{\\\"1\\\"}]\\) \
+dimensions.\"",2,716,193,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481982000705*^9},ExpressionUUID->"1f90a5d4-56d2-457f-9b8f-cfbc5e3f6532"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"MapThread\\\", \\\"::\\\
+\", \\\"mptd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,194,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819820022675*^9},ExpressionUUID->"9f3793f8-9449-432b-af5b-\
+e38a614bea52"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,195,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198200539255`*^9},ExpressionUUID->"6c19b045-9a04-4a05-9b9a-\
+381493fc250b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,196,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198200695505`*^9},ExpressionUUID->"a66a5dfc-6a77-4375-8d04-\
+2084376bde02"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,197,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198201008*^9},ExpressionUUID->"01e494c7-1078-459d-8772-010af8368d4b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \
+\\!\\(\\*RowBox[{\\\"#1\\\"}]\\) does not exist.\"",2,716,198,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481982013205*^9},ExpressionUUID->"1b91b6fc-703b-44d4-8a6e-40c02ba634a0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,199,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198201476755`*^9},ExpressionUUID->"e5366c7d-63be-4178-bfca-\
+76b1dc96397f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`\\\", \
+\\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`\\\", \\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or \
+pairs of numbers.\"",2,716,200,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198201789255`*^9},ExpressionUUID->"66e9c6f0-0198-4d29-be17-\
+13dfcb6fa698"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`\\\", \
+\\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`\\\", \\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or \
+pairs of numbers.\"",2,716,201,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198202570505`*^9},ExpressionUUID->"aa353a8f-094f-4164-9726-\
+d0d2bfc79360"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`\\\", \
+\\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`\\\", \\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"98\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"103\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f2site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f2site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"98\\\", \\\",\\\", \\\"3\\\", \\\",\
+\\\", \\\"103\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or \
+pairs of numbers.\"",2,716,202,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198203195524`*^9},ExpressionUUID->"097ba1a1-f1a0-4b6b-8bab-\
+a163a2a36753"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,716,203,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198203508015`*^9},ExpressionUUID->"2254406b-e4ff-4a4e-a6d3-\
+5d869b66cd15"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"getTrackResults", "[", 
+         RowBox[{
+         "f6site1tend", ",", "2", ",", "\"\<nucMeanIntensity\>\"", ",", "#"}],
+          "]"}], "&"}], ",", 
+       RowBox[{
+        RowBox[{"getTrackNumbersGreaterThan", "[", 
+         RowBox[{"f6site1tend", ",", "20"}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"trackNum", ";;", 
+          RowBox[{"trackNum", "+", "1"}]}], "]"}], "]"}]}], "]"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", "Thin"}], "]"}]}], ",", " ", 
+     RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "250"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "3000"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"trackNum", ",", 
+     RowBox[{"Range", "[", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"getTrackNumbersGreaterThan", "[", 
+         RowBox[{"f6site1tend", ",", "20"}], "]"}], "]"}], "-", "5"}], 
+      "]"}]}], "}"}], ",", " ", 
+   RowBox[{"ControlType", "\[Rule]", "Manipulator"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7246998553436537`*^9, 
+  3.724699869876754*^9}},ExpressionUUID->"2e85a856-080b-4a04-9b78-\
+2565fbdd0b5d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`trackNum$$ = 60, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`trackNum$$], CompressedData["
+1:eJwl1FV4EAQUBeCNMdjoBSnSXYqUoHQjOToVBAlhhIR0dzfSXUp3Sxl0gzQo
+qLTSzb+Ph//ct/N2bvpm7aOiAwMCAlKImBuLIGITTBziEkIo8YhPAhKSiMQk
+IYxwIogkKclIHtNPSlLxAan5kDSkJR3pyUBGMpGZLGQlG9nJQU5ykZs8fMTH
+5OUT8pGfAhSkEJ9SmCJ8xucUpRjFKUFJSlGaMpSlHOWpQEUq8QWVqUJVqlGd
+GkRRk1rUpg51qUd9GtCQRjSmCV/yFU1pxtc0pwXf0JJWtKYN39KWdkTTng50
+pBPf0ZkudKUb39OdHvSkF73pQ1/60Z8BDGQQgxnCUIYxnBGMZBSjGcNYxjGe
+CUxkEpOZwlSm8QPTmcFMZjGbOcxlHvNZwEIWsZglLGUZy/mRn1jBSlaxmjWs
+ZR3r2cBGNrGZLWxlG9vZwU528TO72cNe9rGfX/iV3/idAxzkEIc5wlGOcZwT
+nOQUpznDWc7xB+e5wEUucZkrXOUa1/mTv7jBTf7mH/7lFre5w13ucZ8H/Mf/
+POQRj3nCU57xnBe85BWvecNbYsYfSCyCiE0wcYhLCKHEIz4JSEgiEpOEMMKJ
+IJKkJCN54Pv/8g6ma4KS
+      "]}}, Typeset`size$$ = {698., {41., 12.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`trackNum$96383$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`trackNum$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`trackNum$$, $CellContext`trackNum$96383$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ListPlot[
+        Map[$CellContext`getTrackResults[$CellContext`f6site1tend, 2, 
+          "nucMeanIntensity", #]& , 
+         Part[
+          $CellContext`getTrackNumbersGreaterThan[$CellContext`f6site1tend, 
+           20], 
+          Span[$CellContext`trackNum$$, $CellContext`trackNum$$ + 1]]], 
+        PlotStyle -> Directive[Black, Thin], Joined -> True, 
+        PlotRange -> {{0, 250}, {0, 3000}}], 
+      "Specifications" :> {{$CellContext`trackNum$$, CompressedData["
+1:eJwl1FV4EAQUBeCNMdjoBSnSXYqUoHQjOToVBAlhhIR0dzfSXUp3Sxl0gzQo
+qLTSzb+Ph//ct/N2bvpm7aOiAwMCAlKImBuLIGITTBziEkIo8YhPAhKSiMQk
+IYxwIogkKclIHtNPSlLxAan5kDSkJR3pyUBGMpGZLGQlG9nJQU5ykZs8fMTH
+5OUT8pGfAhSkEJ9SmCJ8xucUpRjFKUFJSlGaMpSlHOWpQEUq8QWVqUJVqlGd
+GkRRk1rUpg51qUd9GtCQRjSmCV/yFU1pxtc0pwXf0JJWtKYN39KWdkTTng50
+pBPf0ZkudKUb39OdHvSkF73pQ1/60Z8BDGQQgxnCUIYxnBGMZBSjGcNYxjGe
+CUxkEpOZwlSm8QPTmcFMZjGbOcxlHvNZwEIWsZglLGUZy/mRn1jBSlaxmjWs
+ZR3r2cBGNrGZLWxlG9vZwU528TO72cNe9rGfX/iV3/idAxzkEIc5wlGOcZwT
+nOQUpznDWc7xB+e5wEUucZkrXOUa1/mTv7jBTf7mH/7lFre5w13ucZ8H/Mf/
+POQRj3nCU57xnBe85BWvecNbYsYfSCyCiE0wcYhLCKHEIz4JSEgiEpOEMMKJ
+IJKkJCN54Pv/8g6ma4KS
+         "]}}, "Options" :> {ControlType -> Manipulator}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{749., {70., 77.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.724699871487898*^9},ExpressionUUID->"2f3fc5a0-8ae8-4fb0-9bc4-\
+d336fb815cda"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"60\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"61\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20\\\"}], \\\"]\\\"}]\\).\"",2,3,
+   37,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822448653736`*^9},ExpressionUUID->"da0dc6b1-4589-42ff-9a02-\
+d392682f3a0d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"60\\\", \
+\\\";;\\\", \\\"61\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,38,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782244899397*^9},ExpressionUUID->"97d7a323-44b9-426a-932c-\
+955deddb3393"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"60\\\", \
+\\\";;\\\", \\\"61\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,39,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822449814544`*^9},ExpressionUUID->"2ead6499-47e1-400a-9593-\
+24c9417516f8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getTrackResults\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"60\\\", \
+\\\";;\\\", \\\"61\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part \
+specification.\"",2,3,40,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822449934626`*^9},ExpressionUUID->"8ae6ca92-e152-402a-a5a6-\
+4bfb4fab23dc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3,41,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822450184813`*^9},ExpressionUUID->"67266ad7-7c6b-4305-b8bb-\
+49a493ec08e0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f6site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"60\\\", \\\";;\\\
+\", \\\"61\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a \
+list of numbers or pairs of numbers.\"",2,3,42,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822450525045`*^9},ExpressionUUID->"939bdf37-abdb-42e7-88e1-\
+d99bf72a6057"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f6site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"60\\\", \\\";;\\\
+\", \\\"61\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a \
+list of numbers or pairs of numbers.\"",2,3,43,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782245164582*^9},ExpressionUUID->"e07baf09-323e-4ce2-bc74-\
+32d596a29705"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getTrackResults\\\", \\\"[\\\", RowBox[{\\\
+\"f6site1tend\\\", \\\",\\\", \\\"2.`\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", RowBox[{\\\"getTrackResults\\\", \
+\\\"[\\\", RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\
+\\\\\\\"nucMeanIntensity\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"60\\\", \\\";;\\\
+\", \\\"61\\\"}]}], \\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a \
+list of numbers or pairs of numbers.\"",2,3,44,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822452556458`*^9},ExpressionUUID->"e962eecd-cf01-4edb-8b5d-\
+87285eca27c3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,3,45,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782245269655*^9},ExpressionUUID->"788f9e00-9646-4347-891e-\
+6fd82e12c80a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,204,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198203976784`*^9},ExpressionUUID->"bca8d847-a362-4292-9751-\
+b68d051a527e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","argm",
+   "\"\\!\\(\\*RowBox[{\\\"Part\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\\\
+\"}]\\) arguments; \\!\\(\\*RowBox[{\\\"1\\\"}]\\) or more arguments are \
+expected.\"",2,716,205,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198204445524`*^9},ExpressionUUID->"3c52d44c-f2ae-48b3-a320-\
+d60186a0f9b1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Keys","invrl",
+   "\"The argument \\!\\(\\*RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}]\\) \
+is not a valid Association or a list of rules.\"",2,716,206,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198204758015`*^9},ExpressionUUID->"80af8709-f12e-48dd-9910-\
+bd6155d2f8af"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"60\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"61\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Keys\\\", \\\"[\\\", \
+RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\).\"",2,716,207,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198205070543`*^9},ExpressionUUID->"92afb82e-dc15-4263-a56a-\
+332dc1fb9082"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,208,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198205383024`*^9},ExpressionUUID->"28aba105-aba0-4aa5-8030-\
+bb7e1271b39c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,209,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198205695524`*^9},ExpressionUUID->"c268cf04-62d4-421a-b499-\
+e83aaeba7106"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,210,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198206008034`*^9},ExpressionUUID->"24bb0c72-c258-4911-a58b-\
+e1a1d6da2bcd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,211,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198206320534`*^9},ExpressionUUID->"dddaa512-2d5f-46e3-9de0-\
+95311c07b557"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"60\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"61\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,212,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198206476784`*^9},ExpressionUUID->"7a2141b2-f47f-4712-96f6-\
+6a56d4c5afcf"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"60\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"61\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,213,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819820710179*^9},ExpressionUUID->"e6b6ac83-b92a-404b-b1ea-\
+72169dd14584"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"60\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"61\\\", \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,214,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198207258034`*^9},ExpressionUUID->"5c2e8022-521c-45da-b3e3-\
+f50432a8a267"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,215,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72481982074143*^9},ExpressionUUID->"b6830834-c583-4a67-9778-6483665c23e0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\\\", \\\",\\\", \\\"2\\\", \\\",\
+\\\", \\\"61\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,716,216,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198207726793`*^9},ExpressionUUID->"e33c9245-75da-4480-b0c0-\
+0349e4a8b27b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\\\", \\\",\\\", \\\"2\\\", \\\",\
+\\\", \\\"61\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,716,217,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819820819556*^9},ExpressionUUID->"be61f340-952d-417c-98ef-\
+6158f3f1cee5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"2.`\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\
+\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"60\\\", \\\",\\\", \\\"2\\\", \\\",\
+\\\", \\\"61\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\"\
+\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,716,218,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198208976803`*^9},ExpressionUUID->"ef3dea63-2577-46af-83eb-\
+cb3721ab715f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,716,219,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198209289293`*^9},ExpressionUUID->"28d591a4-659e-4b75-b71e-\
+0fa5e51e7856"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1379,7 +3644,7 @@ D3nEY57wlGc85wUvecVr3vCWd7znAx/5xGe+8JVvfOcHP/nFb/4c/YEITBCC
 EozghCAkoQhNGMISjvBEICKRiEwUohKN6MQgJrGITRziEo/4JCAhiUhMEpKS
 jOSkICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKEwRilIs
 yP//ov8BdPeOFg==
-      "]}}, Typeset`size$$ = {360., {111., 118.}}, Typeset`update$$ = 0, 
+      "]}}, Typeset`size$$ = {644., {22., 12.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`trackNum$42170$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1427,7 +3692,7 @@ EozghCAkoQhNGMISjvBEICKRiEwUohKN6MQgJrGITRziEo/4JCAhiUhMEpKS
 jOSkICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKEwRilIs
 yP//ov8BdPeOFg==
          "]}}, "Options" :> {ControlType -> Slider}, "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {158., 165.}},
+     ImageSizeCache->{695., {60., 67.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1440,7 +3705,690 @@ yP//ov8BdPeOFg==
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{3.7246842267966747`*^9, 3.7246849575468187`*^9, 
   3.7246869292515717`*^9},ExpressionUUID->"b39c5e7a-b766-478b-a5c6-\
-676507351d37"]
+676507351d37"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"107\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"112\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20\\\"}], \\\"]\\\"}]\\).\"",2,3,
+   46,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822454397745`*^9},ExpressionUUID->"491e035d-bafe-45bd-a017-\
+729b177e1772"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", RowBox[{\\\"107\\\", \\\";;\\\", \
+\\\"112\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,
+   3,47,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782245475799*^9},ExpressionUUID->"8730ddf8-a287-4b55-be6f-\
+495ad423306b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", RowBox[{\\\"107\\\", \\\";;\\\", \
+\\\"112\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,
+   3,48,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822455838747`*^9},ExpressionUUID->"39362e5e-b851-4c72-8ec5-\
+3d08c7b56dca"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", RowBox[{\\\"107\\\", \\\";;\\\", \
+\\\"112\\\"}]}], \\\"]\\\"}]\\) cannot be used as a part specification.\"",2,
+   3,49,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822456008863`*^9},ExpressionUUID->"44ad9f26-23c5-4483-b400-\
+90ac5a34c212"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,3,50,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782245631908*^9},ExpressionUUID->"5e7d7dcd-1127-4279-842d-\
+bf8820b460ae"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", RowBox[{\\\"f6site1tend\\\", \
+\\\",\\\", RowBox[{\\\"107\\\", \\\";;\\\", \\\"112\\\"}]}], \\\"]\\\"}], \
+\\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,51,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822456599274`*^9},ExpressionUUID->"01368213-1334-4aeb-9ba4-\
+e14e3a7c3ad6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", RowBox[{\\\"f6site1tend\\\", \
+\\\",\\\", RowBox[{\\\"107\\\", \\\";;\\\", \\\"112\\\"}]}], \\\"]\\\"}], \
+\\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,52,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782245761999*^9},ExpressionUUID->"21852bec-2c10-4f99-9819-\
+b3ec40974ae5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \
+RowBox[{\\\"getTrackNumbersGreaterThan\\\", \\\"[\\\", \
+RowBox[{\\\"f6site1tend\\\", \\\",\\\", \\\"20.`\\\"}], \\\"]\\\"}]}], \
+\\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \
+RowBox[{\\\"getCytoNuclearRatio\\\", \\\"[\\\", RowBox[{\\\"f6site1tend\\\", \
+\\\",\\\", RowBox[{\\\"107\\\", \\\";;\\\", \\\"112\\\"}]}], \\\"]\\\"}], \
+\\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or pairs of \
+numbers.\"",2,3,53,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724782245841055*^9},ExpressionUUID->"4e79edbd-3dbe-479d-8392-\
+e464484bfa0c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,3,54,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7247822458520613`*^9},ExpressionUUID->"8e8b8443-3a1b-450c-81af-\
+c6e79d4751c2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,220,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198210070553`*^9},ExpressionUUID->"89c8ffb0-3a83-404b-9a6d-\
+3a52f254a87a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","argm",
+   "\"\\!\\(\\*RowBox[{\\\"Part\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"0\\\
+\"}]\\) arguments; \\!\\(\\*RowBox[{\\\"1\\\"}]\\) or more arguments are \
+expected.\"",2,716,221,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198210383053`*^9},ExpressionUUID->"82897d8c-3793-4428-bd34-\
+c906529cc713"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Keys","invrl",
+   "\"The argument \\!\\(\\*RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}]\\) \
+is not a valid Association or a list of rules.\"",2,716,222,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198210695553`*^9},ExpressionUUID->"dd1fd669-9ecf-4947-9615-\
+680977fc70c3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"107\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"112\\\"}]\\) in \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\).\"",2,
+   716,223,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198211008067`*^9},ExpressionUUID->"e4e14ec2-6e9c-4abc-bfeb-\
+55f2e0b97c2b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,224,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821132057*^9},ExpressionUUID->"81c03c6a-c4f6-466d-ba64-\
+a0fd46ff402d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,225,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821163306*^9},ExpressionUUID->"8beae62a-b69f-4aed-9065-\
+6e087cffa0cd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,716,226,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821194557*^9},ExpressionUUID->"7ba3eb21-4b20-471c-b106-\
+0fbc36e7e5c2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,227,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821225806*^9},ExpressionUUID->"1796d0ca-1d46-491b-8339-\
+642ca6141352"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\"]\\\"}]\\) does \
+not exist.\"",2,716,228,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821257056*^9},ExpressionUUID->"6427448e-d0d3-4c94-8807-\
+0dd40cf61df8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MapThread","mptd",
+   "\"Object \\!\\(\\*RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]\\) at \
+position {2, \\!\\(\\*RowBox[{\\\"1\\\"}]\\)} in \
+\\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3\\\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) has only \
+\\!\\(\\*RowBox[{\\\"0\\\"}]\\) of required \\!\\(\\*RowBox[{\\\"1\\\"}]\\) \
+dimensions.\"",2,716,229,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198212883077`*^9},ExpressionUUID->"faa3b7fd-f126-41e0-b9fa-\
+3e979fc105f6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MapThread","mptd",
+   "\"Object \\!\\(\\*RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"112\\\", \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}]\\) at position {2, \\!\\(\\*RowBox[{\\\"1\\\"}]\\)} \
+in \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) has only \\!\\(\\*RowBox[{\\\"0\\\"}]\\) of required \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) dimensions.\"",2,716,230,22028827879537901430,
+   "Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198213195577`*^9},ExpressionUUID->"88b79e02-db34-485d-a554-\
+deb859dc807e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,231,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821350835*^9},ExpressionUUID->"99ee48d7-06b5-421f-8332-\
+92f4d1488c31"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MapThread","mptd",
+   "\"Object \\!\\(\\*RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`16.\\\
+\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"Part\\\", \
+\\\"[\\\", \\\"]\\\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\
+\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]\\) at \
+position {2, \\!\\(\\*RowBox[{\\\"1\\\"}]\\)} in \
+\\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`16.\\\
+\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`16.\\\", \\\",\\\", RowBox[{RowBox[{\\\"Keys\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\
+\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) has only \
+\\!\\(\\*RowBox[{\\\"0\\\"}]\\) of required \\!\\(\\*RowBox[{\\\"1\\\"}]\\) \
+dimensions.\"",2,716,232,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821413309*^9},ExpressionUUID->"4f7ec189-7b90-4bda-b136-\
+99bd5abacc6d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"MapThread\\\", \\\"::\\\
+\", \\\"mptd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,233,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821444558*^9},ExpressionUUID->"d8420962-32d1-4ff6-999e-\
+e2d7c3d3934b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,234,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821460183*^9},ExpressionUUID->"b5c7480e-505c-4cb0-b11a-\
+ebc2fcdb8bf5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","pkspec1",
+   "\"The expression \\!\\(\\*RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}], \
+RowBox[{RowBox[{\\\"Slot\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]], \\\
+\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) cannot be used as a part specification.\"",2,716,235,
+   22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821491433*^9},ExpressionUUID->"7b8e4f97-9e94-4548-9ccb-\
+0e4e8f104b87"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"pkspec1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,716,236,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821507058*^9},ExpressionUUID->"d9209acf-a470-4905-9bcd-\
+9b56be7b5059"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`\\\", \
+\\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`\\\", \\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or \
+pairs of numbers.\"",2,716,237,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821538309*^9},ExpressionUUID->"51533afa-eb22-4bab-a99e-\
+8e0d8479b66e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`\\\", \
+\\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`\\\", \\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or \
+pairs of numbers.\"",2,716,238,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198216320815`*^9},ExpressionUUID->"745c5793-1e86-4026-9568-\
+8a6c0e2de457"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ListPlot","lpn",
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"5\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \\\",\\\", \\\"3.`\\\", \
+\\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \\\"]\\\"}]}], \
+\\\"}\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \
+\\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Part\\\", \\\"[\\\", \\\"]\\\"}], \
+\\\",\\\", \\\"3.`\\\", \\\",\\\", RowBox[{\\\"Part\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"\
+\[LeftDoubleBracket]\\\", RowBox[{\\\"MapThread\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"#1\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}], \\\",\\\
+\", RowBox[{\\\"N\\\", \\\"[\\\", FractionBox[RowBox[{RowBox[{\\\"Slot\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\
+\[RightDoubleBracket]\\\"}], RowBox[{\\\"Part\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]], \
+\\\"]\\\"}]}], \\\"}\\\"}], \\\"&\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\
+\"3\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"cytoMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \
+\\\"\[RightDoubleBracket]\\\"}], \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"107\\\", \\\",\\\", RowBox[{RowBox[{\\\"f6site1tend\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"5\\\", \\\"\[RightDoubleBracket]\\\"}], \\\"[\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"107\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \
+\\\"112\\\", \\\",\\\", \\\"\\\\\\\"nucMeanIntensity\\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\"]\\\"}], \\\"\[RightDoubleBracket]\\\"}]\\) is not a list of numbers or \
+pairs of numbers.\"",2,716,239,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7248198217101855`*^9},ExpressionUUID->"7a8ab7fa-03bd-4ffe-8b69-\
+4d2184710e11"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ListPlot\\\", \
+\\\"::\\\", \\\"lpn\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,716,240,22028827879537901430,"Kernel2"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.724819821741435*^9},ExpressionUUID->"779ed4e3-703f-46cf-a8c0-\
+ab3d40c4e963"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -40507,7 +43455,7 @@ efa144b4158f"]
 },
 Evaluator->"Kernel2",
 WindowSize->{1085, 741},
-WindowMargins->{{30, Automatic}, {Automatic, 0}},
+WindowMargins->{{19, Automatic}, {131, Automatic}},
 FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -40522,82 +43470,245 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 413, 10, 62, "Input",ExpressionUUID->"0206cc45-4d9b-4581-94db-9d97f152c41e"],
+Cell[558, 20, 413, 10, 48, "Input",ExpressionUUID->"0206cc45-4d9b-4581-94db-9d97f152c41e"],
 Cell[974, 32, 428, 12, 144, "Text",ExpressionUUID->"3bb617a2-78ee-4544-81b4-d3e274ff32c8"],
-Cell[1405, 46, 215, 4, 46, "Output",ExpressionUUID->"ae3732ba-12f2-4e1a-b85f-bf4c1e61eb03"],
-Cell[1623, 52, 1327, 39, 176, "Input",ExpressionUUID->"97911ae8-5cba-4a02-976c-f62a8fe724d8"],
-Cell[2953, 93, 526, 13, 42, "Input",ExpressionUUID->"8e6951db-275f-4997-a315-47a1bb1c897c"],
+Cell[1405, 46, 215, 4, 32, "Output",ExpressionUUID->"ae3732ba-12f2-4e1a-b85f-bf4c1e61eb03"],
+Cell[1623, 52, 1327, 39, 162, "Input",ExpressionUUID->"97911ae8-5cba-4a02-976c-f62a8fe724d8"],
+Cell[2953, 93, 526, 13, 28, "Input",ExpressionUUID->"8e6951db-275f-4997-a315-47a1bb1c897c"],
 Cell[CellGroupData[{
-Cell[3504, 110, 215, 5, 42, "Input",ExpressionUUID->"579dd02b-727f-48ac-a984-856a3ed05591"],
-Cell[3722, 117, 10710, 283, 211, "Output",ExpressionUUID->"54d7fc1e-ff66-4069-8fc1-7744174c6097"]
+Cell[3504, 110, 215, 5, 28, "Input",ExpressionUUID->"579dd02b-727f-48ac-a984-856a3ed05591"],
+Cell[3722, 117, 10710, 283, 197, "Output",ExpressionUUID->"54d7fc1e-ff66-4069-8fc1-7744174c6097"]
 }, Open  ]],
-Cell[14447, 403, 4716, 127, 271, "Input",ExpressionUUID->"f7a56d7b-6d0d-4e5d-a18a-a97b4c659bee"],
+Cell[14447, 403, 4716, 127, 257, "Input",ExpressionUUID->"f7a56d7b-6d0d-4e5d-a18a-a97b4c659bee"],
 Cell[CellGroupData[{
-Cell[19188, 534, 364, 7, 42, "Input",ExpressionUUID->"34778249-bd06-478f-afe4-8a98561a7660"],
-Cell[19555, 543, 5500, 176, 161, "Output",ExpressionUUID->"7490bc14-b434-4923-8e9e-464ab0d30890"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[25092, 724, 1574, 42, 119, "Input",ExpressionUUID->"2cfcdf00-ae39-46d5-89f3-75a9e0c79af2"],
-Cell[26669, 768, 5474, 101, 376, "Output",ExpressionUUID->"07a2f860-3341-471c-b86e-8b98c588a96b"]
+Cell[19188, 534, 364, 7, 28, "Input",ExpressionUUID->"34778249-bd06-478f-afe4-8a98561a7660"],
+Cell[19555, 543, 5500, 176, 147, "Output",ExpressionUUID->"7490bc14-b434-4923-8e9e-464ab0d30890"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32180, 874, 1790, 42, 100, "Input",ExpressionUUID->"f8f098a3-765a-4025-aaa8-ba273808922d"],
-Cell[33973, 918, 5747, 104, 376, "Output",ExpressionUUID->"fc0371a2-86d4-4200-a255-81caab732495"]
+Cell[25092, 724, 1574, 42, 105, "Input",ExpressionUUID->"2cfcdf00-ae39-46d5-89f3-75a9e0c79af2"],
+Cell[26669, 768, 5470, 101, 166, "Output",ExpressionUUID->"07a2f860-3341-471c-b86e-8b98c588a96b"],
+Cell[32142, 871, 483, 11, 21, "Message",ExpressionUUID->"ed0f715c-150c-4610-94ab-db326905ee15"],
+Cell[32628, 884, 537, 11, 21, "Message",ExpressionUUID->"f1ab07f8-c23c-477d-9794-4707b0a8d4de"],
+Cell[33168, 897, 535, 11, 21, "Message",ExpressionUUID->"10b9483e-b51c-4ce7-a440-a3f9cbb2d3f0"],
+Cell[33706, 910, 535, 11, 21, "Message",ExpressionUUID->"73b3291f-e3f1-458c-ba96-d95d20ac87d6"],
+Cell[34244, 923, 402, 9, 21, "Message",ExpressionUUID->"f9057555-db34-42f7-ab96-d68bead44c31"],
+Cell[34649, 934, 911, 17, 39, "Message",ExpressionUUID->"86343445-e4c3-4858-84f1-40e234b6e321"],
+Cell[35563, 953, 911, 17, 39, "Message",ExpressionUUID->"acc57597-ef73-4522-89f3-4d0bf0735e3e"],
+Cell[36477, 972, 913, 17, 39, "Message",ExpressionUUID->"0155d548-b652-42a1-a6e9-4a74307568a1"],
+Cell[37393, 991, 400, 9, 21, "Message",ExpressionUUID->"fa5c1bf4-373f-4a49-8265-ae95aa27f13d"],
+Cell[37796, 1002, 410, 9, 21, "Message",ExpressionUUID->"91d884f9-fe85-488b-a235-8bc05aad944d"],
+Cell[38209, 1013, 398, 9, 21, "Message",ExpressionUUID->"ebe0793c-dc69-4399-9a96-fe477073b179"],
+Cell[38610, 1024, 364, 9, 21, "Message",ExpressionUUID->"7084ef73-5c9e-481e-99e7-2545a323f080"],
+Cell[38977, 1035, 455, 10, 21, "Message",ExpressionUUID->"2198e34a-fa50-44c6-b235-9b2adeecc72f"],
+Cell[39435, 1047, 412, 9, 21, "Message",ExpressionUUID->"69cdac35-14b4-49aa-b1c9-fe6bb11eb031"],
+Cell[39850, 1058, 406, 9, 21, "Message",ExpressionUUID->"8517955f-05e3-4e6a-8966-47b111d24f6b"],
+Cell[40259, 1069, 412, 9, 21, "Message",ExpressionUUID->"ba2629a9-fb05-4409-a0e5-d345721f0e51"],
+Cell[40674, 1080, 402, 9, 21, "Message",ExpressionUUID->"af711359-55a3-47d1-a74e-5fca34444fac"],
+Cell[41079, 1091, 817, 15, 21, "Message",ExpressionUUID->"ad5acdb0-eb16-4f07-91d3-ab2dce200be8"],
+Cell[41899, 1108, 817, 15, 21, "Message",ExpressionUUID->"97e8dd80-82fa-47e2-bc8a-e061f20cd5be"],
+Cell[42719, 1125, 817, 15, 21, "Message",ExpressionUUID->"aca40735-4fe3-45f6-a571-3fd49bcc8b47"],
+Cell[43539, 1142, 404, 9, 21, "Message",ExpressionUUID->"44759406-b8c2-4f0c-ac39-dea518171be8"],
+Cell[43946, 1153, 1618, 26, 39, "Message",ExpressionUUID->"fb7c1d58-ef1b-41ce-b96d-9f57d871afd6"],
+Cell[45567, 1181, 1620, 26, 39, "Message",ExpressionUUID->"a40ea111-1b0f-4f27-aefc-dc64cde548cc"],
+Cell[47190, 1209, 1620, 26, 39, "Message",ExpressionUUID->"e958faa4-0646-4e2d-8dee-12aff7399de2"],
+Cell[48813, 1237, 401, 8, 21, "Message",ExpressionUUID->"749f4ace-25fb-4743-85e8-162fbd367c2d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39757, 1027, 1272, 34, 100, "Input",ExpressionUUID->"4e48ae11-6741-436c-8015-751fb48dde78"],
-Cell[41032, 1063, 5375, 96, 350, "Output",ExpressionUUID->"a7c4678c-6026-4aa9-85dc-dac12d4af997"]
-}, Open  ]],
-Cell[46422, 1162, 130, 3, 28, "Input",ExpressionUUID->"59c82f4f-dc81-4d8a-b9db-9fe65f443ecf"],
-Cell[CellGroupData[{
-Cell[46577, 1169, 1347, 35, 100, "Input",ExpressionUUID->"24b4221d-9bb8-4301-a1a8-a0b4ed497c02"],
-Cell[47927, 1206, 5431, 98, 356, "Output",ExpressionUUID->"3346ee41-0626-47fe-8e8b-ba771d41b01f"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[53395, 1309, 1267, 34, 100, "Input",ExpressionUUID->"f3fcf115-76d2-4edb-a6dc-6f69a5b13b05"],
-Cell[54665, 1345, 5405, 97, 356, "Output",ExpressionUUID->"b39c5e7a-b766-478b-a5c6-676507351d37"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[60107, 1447, 907, 26, 62, "Input",ExpressionUUID->"20c56d2c-2ab2-4140-b2d0-44c22d5b608b"],
-Cell[61017, 1475, 1615117, 27428, 438, 1133964, 19540, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"86a4950a-4f5d-4866-bc60-85cd63c37d11"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1676171, 28908, 776, 21, 62, "Input",ExpressionUUID->"1b7d1109-de77-4952-86ec-5309ac3a1e7c"],
-Cell[1676950, 28931, 602719, 10213, 260, 488830, 8345, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"3032374f-ccb0-4eed-97da-91cf4216e899"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2279706, 39149, 563, 15, 42, "Input",ExpressionUUID->"48bbbb55-032f-44b8-af70-6fee25a9513c"],
-Cell[2280272, 39166, 4318, 84, 254, "Output",ExpressionUUID->"b2e38c90-13f0-4ba9-b198-c4cb00dfcab3"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2284627, 39255, 612, 16, 42, "Input",ExpressionUUID->"ab7a69a2-6030-4267-b1d1-cbbee98c6ace"],
-Cell[2285242, 39273, 4334, 84, 254, "Output",ExpressionUUID->"67b7f4ee-aa5e-4ae2-9c6a-5681830208bd"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2289613, 39362, 606, 16, 42, "Input",ExpressionUUID->"9de34bd8-72e6-4a17-8596-009b6f37e9c0"],
-Cell[2290222, 39380, 1538, 38, 256, "Output",ExpressionUUID->"1900932b-3cf0-4bf8-9001-e98e3dc469b8"]
+Cell[49251, 1250, 1790, 42, 86, "Input",ExpressionUUID->"f8f098a3-765a-4025-aaa8-ba273808922d"],
+Cell[51044, 1294, 5743, 104, 146, "Output",ExpressionUUID->"fc0371a2-86d4-4200-a255-81caab732495"],
+Cell[56790, 1400, 480, 11, 21, "Message",ExpressionUUID->"f4a44a5b-ff5d-444f-a9fe-693c823e9564"],
+Cell[57273, 1413, 527, 11, 21, "Message",ExpressionUUID->"37e53ad7-cbe9-4e32-9a74-3811129dd983"],
+Cell[57803, 1426, 529, 11, 21, "Message",ExpressionUUID->"ab49727d-1600-44aa-b934-0119145dc163"],
+Cell[58335, 1439, 529, 11, 21, "Message",ExpressionUUID->"5ac685c0-0554-42c4-b72b-30c0ea262a7b"],
+Cell[58867, 1452, 403, 9, 21, "Message",ExpressionUUID->"f3471756-4f2a-4307-8cf0-62b0776c2616"],
+Cell[59273, 1463, 886, 15, 39, "Message",ExpressionUUID->"1b881294-23d1-4782-a0d2-d940c70bea1d"],
+Cell[60162, 1480, 886, 15, 39, "Message",ExpressionUUID->"7b160cd3-2ef9-4686-9988-aa2545b35d8f"],
+Cell[61051, 1497, 888, 15, 39, "Message",ExpressionUUID->"2642e212-2e9b-4c64-b3bc-abcbc5746ca8"],
+Cell[61942, 1514, 401, 9, 21, "Message",ExpressionUUID->"9322e98b-6241-44ce-ace9-059a7de978ae"],
+Cell[62346, 1525, 412, 9, 21, "Message",ExpressionUUID->"43a01d20-350b-41e4-a7f6-e0094046e013"],
+Cell[62761, 1536, 398, 9, 21, "Message",ExpressionUUID->"7d1c385f-dfc4-43e5-8712-41609597c4fc"],
+Cell[63162, 1547, 364, 9, 21, "Message",ExpressionUUID->"b58a491f-eb78-49f8-a794-464cf77d92da"],
+Cell[63529, 1558, 453, 10, 21, "Message",ExpressionUUID->"0c318327-a9e3-4769-b640-efa415d40c1e"],
+Cell[63985, 1570, 412, 9, 21, "Message",ExpressionUUID->"d2cc1e7c-d8c3-41fe-9fd1-06b26e4f9102"],
+Cell[64400, 1581, 406, 9, 21, "Message",ExpressionUUID->"892bb4b5-f09c-4f61-a7d7-6c73121ff678"],
+Cell[64809, 1592, 410, 9, 21, "Message",ExpressionUUID->"ff598099-fc6b-4d9e-b774-14e793d69b21"],
+Cell[65222, 1603, 402, 9, 21, "Message",ExpressionUUID->"55ff6c05-e784-4d53-9f52-77c489cbb80a"],
+Cell[65627, 1614, 805, 15, 21, "Message",ExpressionUUID->"a504078d-fdc2-4185-8a22-4f6b115f45e5"],
+Cell[66435, 1631, 805, 15, 21, "Message",ExpressionUUID->"11b7dc1e-8f4a-4608-b741-33af7afce667"],
+Cell[67243, 1648, 805, 15, 21, "Message",ExpressionUUID->"fa15f418-246c-4e0c-909f-9965f5d12bc7"],
+Cell[68051, 1665, 404, 9, 21, "Message",ExpressionUUID->"c4f45ad1-926b-4a2c-9770-43e9a3888a75"],
+Cell[68458, 1676, 1601, 26, 21, "Message",ExpressionUUID->"ed7e4196-757e-4f83-ac91-afd71de9dcac"],
+Cell[70062, 1704, 1599, 26, 21, "Message",ExpressionUUID->"55c01eed-2cd6-4bb8-822e-5fe6752637e9"],
+Cell[71664, 1732, 1599, 26, 21, "Message",ExpressionUUID->"eef653df-ca50-4597-981c-695c9af45a43"],
+Cell[73266, 1760, 401, 8, 21, "Message",ExpressionUUID->"f776c1f8-ff7d-469b-a395-e0fb68bc415c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2291797, 39423, 476, 14, 42, "Input",ExpressionUUID->"2876f56c-d3d9-4bd6-99cf-79f54d13cc9a"],
-Cell[2292276, 39439, 4882, 94, 272, "Output",ExpressionUUID->"3b12f9a1-946c-48e1-be04-fe84025c0081"]
+Cell[73704, 1773, 1272, 34, 86, "Input",ExpressionUUID->"4e48ae11-6741-436c-8015-751fb48dde78"],
+Cell[74979, 1809, 5372, 96, 166, "Output",ExpressionUUID->"a7c4678c-6026-4aa9-85dc-dac12d4af997"],
+Cell[80354, 1907, 389, 9, 21, "Message",ExpressionUUID->"44fa71e0-bcd2-4f9d-a639-5f7912da10c5"],
+Cell[80746, 1918, 535, 11, 21, "Message",ExpressionUUID->"7a8b32dd-a8c9-46bc-97af-7bfd7c2de538"],
+Cell[81284, 1931, 535, 11, 21, "Message",ExpressionUUID->"ddc13c4b-dff9-478e-ab63-815551830132"],
+Cell[81822, 1944, 533, 11, 21, "Message",ExpressionUUID->"8ced3afc-701f-4da9-94ed-a43fdcd50b4f"],
+Cell[82358, 1957, 403, 9, 21, "Message",ExpressionUUID->"77c433d0-387a-4134-bac9-9f3f2105c9b5"],
+Cell[82764, 1968, 809, 15, 21, "Message",ExpressionUUID->"1d564b4e-cd60-40bb-90c6-fcde610422b2"],
+Cell[83576, 1985, 811, 15, 21, "Message",ExpressionUUID->"c105bd45-d0a9-4032-8992-01c9b1052c73"],
+Cell[84390, 2002, 811, 15, 21, "Message",ExpressionUUID->"8db043c3-5715-468b-bad6-0cba8b20abd9"],
+Cell[85204, 2019, 401, 9, 21, "Message",ExpressionUUID->"eb686e2e-b435-43cf-a77f-f695f78eb0d1"],
+Cell[85608, 2030, 389, 8, 21, "Message",ExpressionUUID->"8d2a2c72-fda9-486a-ac2b-6cffa73247a3"],
+Cell[86000, 2040, 412, 9, 21, "Message",ExpressionUUID->"498d13e5-4bbc-4c92-a1f5-12dd7981562e"],
+Cell[86415, 2051, 420, 9, 21, "Message",ExpressionUUID->"e0e5c59a-a6b7-4e4f-bd42-ddfe7d26889b"],
+Cell[86838, 2062, 415, 8, 21, "Message",ExpressionUUID->"dd159e19-4dc7-4aec-9329-1eefc4c71a45"],
+Cell[87256, 2072, 402, 9, 21, "Message",ExpressionUUID->"b5cc3b5a-e0e9-4741-bd94-58d06d59dd99"],
+Cell[87661, 2083, 809, 14, 21, "Message",ExpressionUUID->"513239ec-e62d-441e-81b5-6b469e1bf9f0"],
+Cell[88473, 2099, 809, 14, 21, "Message",ExpressionUUID->"e74176f8-eff7-4d4c-ace9-540a706567f6"],
+Cell[89285, 2115, 814, 15, 21, "Message",ExpressionUUID->"c0cabc77-e642-4263-997f-d33dabeff507"],
+Cell[90102, 2132, 406, 9, 21, "Message",ExpressionUUID->"15143164-61be-40e0-809c-4710edaa439c"],
+Cell[90511, 2143, 1683, 26, 39, "Message",ExpressionUUID->"b5b79a77-35e9-487b-82df-1d3f983dba4e"],
+Cell[92197, 2171, 1683, 26, 39, "Message",ExpressionUUID->"c63ad2dd-d3da-4611-a142-7d9e0f403991"],
+Cell[93883, 2199, 1683, 26, 39, "Message",ExpressionUUID->"354740d1-4485-402f-b2a3-477926b51062"],
+Cell[95569, 2227, 406, 9, 21, "Message",ExpressionUUID->"25ea97a9-74db-4c2b-99ae-0a109fc552ad"]
+}, Open  ]],
+Cell[95990, 2239, 130, 3, 28, "Input",ExpressionUUID->"59c82f4f-dc81-4d8a-b9db-9fe65f443ecf"],
+Cell[CellGroupData[{
+Cell[96145, 2246, 1347, 35, 86, "Input",ExpressionUUID->"24b4221d-9bb8-4301-a1a8-a0b4ed497c02"],
+Cell[97495, 2283, 5431, 98, 272, "Output",ExpressionUUID->"3346ee41-0626-47fe-8e8b-ba771d41b01f"],
+Cell[102929, 2383, 477, 10, 21, "Message",ExpressionUUID->"c17347ac-9d6a-4de1-8805-a6e55c7df84e"],
+Cell[103409, 2395, 464, 10, 21, "Message",ExpressionUUID->"3b1435cf-a509-4984-a680-98f2b68424b7"],
+Cell[103876, 2407, 466, 10, 21, "Message",ExpressionUUID->"adfb8047-85c2-4ad2-a662-4a62634b0732"],
+Cell[104345, 2419, 466, 10, 21, "Message",ExpressionUUID->"9287612c-fc02-4ba3-ae8c-3f84ddfdab02"],
+Cell[104814, 2431, 403, 9, 21, "Message",ExpressionUUID->"0200b3fe-71c1-4938-9da7-c7dc5b6780ee"],
+Cell[105220, 2442, 763, 15, 21, "Message",ExpressionUUID->"9f5fd83b-47fe-4286-a203-f0dbdd5109de"],
+Cell[105986, 2459, 761, 15, 21, "Message",ExpressionUUID->"a76b69d8-85af-4688-81af-14960ecddbb4"],
+Cell[106750, 2476, 763, 15, 21, "Message",ExpressionUUID->"4c78e34b-159c-45a2-b80c-33bfb892dbfe"],
+Cell[107516, 2493, 403, 9, 21, "Message",ExpressionUUID->"588e14d5-b8d8-4df2-bf85-6732e0694d15"],
+Cell[107922, 2504, 412, 9, 21, "Message",ExpressionUUID->"e7c7a98b-53ce-4f0c-95cb-5593ad862f3b"],
+Cell[108337, 2515, 400, 9, 21, "Message",ExpressionUUID->"3594587f-b0f4-449e-ac21-39fb8ec26af3"],
+Cell[108740, 2526, 364, 9, 21, "Message",ExpressionUUID->"1366817e-4442-42e3-9fa8-c881e5249abc"],
+Cell[109107, 2537, 454, 10, 21, "Message",ExpressionUUID->"41bf46f0-a91a-4b4e-b720-a8af8a0ecfb3"],
+Cell[109564, 2549, 412, 9, 21, "Message",ExpressionUUID->"45fb52e6-15bf-45f1-9979-5f6157e178a6"],
+Cell[109979, 2560, 406, 9, 21, "Message",ExpressionUUID->"db4d0401-4b0c-4c04-9b89-323d8fc70d03"],
+Cell[110388, 2571, 412, 9, 21, "Message",ExpressionUUID->"6a292479-c861-4be9-a041-c7a763b12f46"],
+Cell[110803, 2582, 404, 9, 21, "Message",ExpressionUUID->"f680ff17-30a0-46eb-90e3-9bc6fbb4ee00"],
+Cell[111210, 2593, 404, 9, 21, "Message",ExpressionUUID->"e48884d5-ec14-4c23-9d2c-888d82c86564"],
+Cell[111617, 2604, 3359, 50, 86, "Message",ExpressionUUID->"9e14ce52-8e15-46e5-86c5-bd83d87f0cc6"],
+Cell[114979, 2656, 2600, 40, 79, "Message",ExpressionUUID->"5e8975db-dc30-4adf-b7d7-2f7fcedc564e"],
+Cell[117582, 2698, 1981, 31, 69, "Message",ExpressionUUID->"3695bd13-19c5-408b-b8c5-620924a3cbb6"],
+Cell[119566, 2731, 3369, 49, 86, "Message",ExpressionUUID->"1f90a5d4-56d2-457f-9b8f-cfbc5e3f6532"],
+Cell[122938, 2782, 406, 9, 21, "Message",ExpressionUUID->"9f3793f8-9449-432b-af5b-e38a614bea52"],
+Cell[123347, 2793, 1981, 31, 69, "Message",ExpressionUUID->"6c19b045-9a04-4a05-9b9a-381493fc250b"],
+Cell[125331, 2826, 1981, 31, 69, "Message",ExpressionUUID->"a66a5dfc-6a77-4375-8d04-2084376bde02"],
+Cell[127315, 2859, 400, 8, 21, "Message",ExpressionUUID->"01e494c7-1078-459d-8772-010af8368d4b"],
+Cell[127718, 2869, 333, 8, 21, "Message",ExpressionUUID->"1b91b6fc-703b-44d4-8a6e-40c02ba634a0"],
+Cell[128054, 2879, 404, 9, 21, "Message",ExpressionUUID->"e5366c7d-63be-4178-bfca-76b1dc96397f"],
+Cell[128461, 2890, 4115, 59, 126, "Message",ExpressionUUID->"66e9c6f0-0198-4d29-be17-13dfcb6fa698"],
+Cell[132579, 2951, 4115, 59, 126, "Message",ExpressionUUID->"aa353a8f-094f-4164-9726-d0d2bfc79360"],
+Cell[136697, 3012, 4115, 59, 126, "Message",ExpressionUUID->"097ba1a1-f1a0-4b6b-8bab-a163a2a36753"],
+Cell[140815, 3073, 406, 9, 21, "Message",ExpressionUUID->"2254406b-e4ff-4a4e-a6d3-5d869b66cd15"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2297195, 39538, 175, 3, 42, "Input",ExpressionUUID->"1afa5874-3ab2-4a95-a124-c877f9200405"],
-Cell[2297373, 39543, 2468, 85, 85, "Output",ExpressionUUID->"8db322f9-67b5-4eef-bd9e-8f127205abcc"]
+Cell[141258, 3087, 1523, 41, 105, "Input",ExpressionUUID->"2e85a856-080b-4a04-9b78-2565fbdd0b5d"],
+Cell[142784, 3130, 3375, 66, 166, "Output",ExpressionUUID->"2f3fc5a0-8ae8-4fb0-9bc4-d336fb815cda"],
+Cell[146162, 3198, 482, 11, 21, "Message",ExpressionUUID->"da0dc6b1-4589-42ff-9a02-d392682f3a0d"],
+Cell[146647, 3211, 534, 11, 21, "Message",ExpressionUUID->"97d7a323-44b9-426a-932c-955deddb3393"],
+Cell[147184, 3224, 536, 11, 21, "Message",ExpressionUUID->"2ead6499-47e1-400a-9593-24c9417516f8"],
+Cell[147723, 3237, 536, 11, 21, "Message",ExpressionUUID->"8ae6ca92-e152-402a-a5a6-4bfb4fab23dc"],
+Cell[148262, 3250, 403, 9, 21, "Message",ExpressionUUID->"67266ad7-7c6b-4305-b8bb-49a493ec08e0"],
+Cell[148668, 3261, 908, 16, 39, "Message",ExpressionUUID->"939bdf37-abdb-42e7-88e1-d99bf72a6057"],
+Cell[149579, 3279, 906, 16, 39, "Message",ExpressionUUID->"e07baf09-323e-4ce2-bc74-32d596a29705"],
+Cell[150488, 3297, 908, 16, 39, "Message",ExpressionUUID->"e962eecd-cf01-4edb-8b5d-87285eca27c3"],
+Cell[151399, 3315, 401, 9, 21, "Message",ExpressionUUID->"788f9e00-9646-4347-891e-6fd82e12c80a"],
+Cell[151803, 3326, 412, 9, 21, "Message",ExpressionUUID->"bca8d847-a362-4292-9751-b68d051a527e"],
+Cell[152218, 3337, 400, 9, 21, "Message",ExpressionUUID->"3c52d44c-f2ae-48b3-a320-d60186a0f9b1"],
+Cell[152621, 3348, 366, 9, 21, "Message",ExpressionUUID->"80af8709-f12e-48dd-9910-bd6155d2f8af"],
+Cell[152990, 3359, 453, 10, 21, "Message",ExpressionUUID->"92afb82e-dc15-4263-a56a-332dc1fb9082"],
+Cell[153446, 3371, 412, 9, 21, "Message",ExpressionUUID->"28aba105-aba0-4aa5-8030-bb7e1271b39c"],
+Cell[153861, 3382, 406, 9, 21, "Message",ExpressionUUID->"c268cf04-62d4-421a-b499-e83aaeba7106"],
+Cell[154270, 3393, 412, 9, 21, "Message",ExpressionUUID->"24bb0c72-c258-4911-a58b-e1a1d6da2bcd"],
+Cell[154685, 3404, 404, 9, 21, "Message",ExpressionUUID->"dddaa512-2d5f-46e3-9de0-95311c07b557"],
+Cell[155092, 3415, 816, 15, 21, "Message",ExpressionUUID->"7a2141b2-f47f-4712-96f6-6a56d4c5afcf"],
+Cell[155911, 3432, 814, 15, 21, "Message",ExpressionUUID->"e6b6ac83-b92a-404b-b1ea-72169dd14584"],
+Cell[156728, 3449, 816, 15, 21, "Message",ExpressionUUID->"5c2e8022-521c-45da-b3e3-f50432a8a267"],
+Cell[157547, 3466, 401, 8, 21, "Message",ExpressionUUID->"b6830834-c583-4a67-9778-6483665c23e0"],
+Cell[157951, 3476, 1617, 26, 39, "Message",ExpressionUUID->"e33c9245-75da-4480-b0c0-0349e4a8b27b"],
+Cell[159571, 3504, 1615, 26, 39, "Message",ExpressionUUID->"be61f340-952d-417c-98ef-6158f3f1cee5"],
+Cell[161189, 3532, 1617, 26, 39, "Message",ExpressionUUID->"ef3dea63-2577-46af-83eb-cb3721ab715f"],
+Cell[162809, 3560, 406, 9, 21, "Message",ExpressionUUID->"28d591a4-659e-4b75-b71e-0fa5e51e7856"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2299878, 39633, 419, 12, 62, "Input",ExpressionUUID->"04190449-3a95-4f2d-8366-eaae47ec291c"],
-Cell[2300300, 39647, 9671, 248, 149, "Output",ExpressionUUID->"cca73430-8d6a-4f99-887e-7ba54dd0b95d"]
+Cell[163252, 3574, 1267, 34, 86, "Input",ExpressionUUID->"f3fcf115-76d2-4edb-a6dc-6f69a5b13b05"],
+Cell[164522, 3610, 5401, 97, 146, "Output",ExpressionUUID->"b39c5e7a-b766-478b-a5c6-676507351d37"],
+Cell[169926, 3709, 484, 11, 21, "Message",ExpressionUUID->"491e035d-bafe-45bd-a017-729b177e1772"],
+Cell[170413, 3722, 465, 10, 21, "Message",ExpressionUUID->"8730ddf8-a287-4b55-be6f-495ad423306b"],
+Cell[170881, 3734, 467, 10, 21, "Message",ExpressionUUID->"39362e5e-b851-4c72-8ec5-3d08c7b56dca"],
+Cell[171351, 3746, 467, 10, 21, "Message",ExpressionUUID->"44ad9f26-23c5-4483-b400-90ac5a34c212"],
+Cell[171821, 3758, 401, 9, 21, "Message",ExpressionUUID->"5e7d7dcd-1127-4279-842d-bf8820b460ae"],
+Cell[172225, 3769, 764, 15, 21, "Message",ExpressionUUID->"01368213-1334-4aeb-9ba4-e14e3a7c3ad6"],
+Cell[172992, 3786, 762, 15, 21, "Message",ExpressionUUID->"21852bec-2c10-4f99-9819-b3ec40974ae5"],
+Cell[173757, 3803, 762, 15, 21, "Message",ExpressionUUID->"4e79edbd-3dbe-479d-8392-e464484bfa0c"],
+Cell[174522, 3820, 403, 9, 21, "Message",ExpressionUUID->"8e8b8443-3a1b-450c-81af-c6e79d4751c2"],
+Cell[174928, 3831, 412, 9, 21, "Message",ExpressionUUID->"89c8ffb0-3a83-404b-9a6d-3a52f254a87a"],
+Cell[175343, 3842, 400, 9, 21, "Message",ExpressionUUID->"82897d8c-3793-4428-bd34-c906529cc713"],
+Cell[175746, 3853, 366, 9, 21, "Message",ExpressionUUID->"dd1fd669-9ecf-4947-9615-680977fc70c3"],
+Cell[176115, 3864, 455, 10, 21, "Message",ExpressionUUID->"e4e14ec2-6e9c-4abc-bfeb-55f2e0b97c2b"],
+Cell[176573, 3876, 410, 9, 21, "Message",ExpressionUUID->"81c03c6a-c4f6-466d-ba64-a0fd46ff402d"],
+Cell[176986, 3887, 404, 9, 21, "Message",ExpressionUUID->"8beae62a-b69f-4aed-9065-6e087cffa0cd"],
+Cell[177393, 3898, 410, 9, 21, "Message",ExpressionUUID->"7ba3eb21-4b20-471c-b106-0fbc36e7e5c2"],
+Cell[177806, 3909, 402, 9, 21, "Message",ExpressionUUID->"1796d0ca-1d46-491b-8339-642ca6141352"],
+Cell[178211, 3920, 404, 9, 21, "Message",ExpressionUUID->"6427448e-d0d3-4c94-8807-0dd40cf61df8"],
+Cell[178618, 3931, 3359, 50, 86, "Message",ExpressionUUID->"faa3b7fd-f126-41e0-b9fa-3e979fc105f6"],
+Cell[181980, 3983, 2608, 40, 86, "Message",ExpressionUUID->"88b79e02-db34-485d-a554-deb859dc807e"],
+Cell[184591, 4025, 1983, 31, 69, "Message",ExpressionUUID->"99ee48d7-06b5-421f-8332-92f4d1488c31"],
+Cell[186577, 4058, 3372, 50, 86, "Message",ExpressionUUID->"4f7ec189-7b90-4bda-b136-99bd5abacc6d"],
+Cell[189952, 4110, 406, 9, 21, "Message",ExpressionUUID->"d8420962-32d1-4ff6-999e-e2d7c3d3934b"],
+Cell[190361, 4121, 1983, 31, 69, "Message",ExpressionUUID->"b5c7480e-505c-4cb0-b11a-ebc2fcdb8bf5"],
+Cell[192347, 4154, 1983, 31, 69, "Message",ExpressionUUID->"7b8e4f97-9e94-4548-9ccb-0e4e8f104b87"],
+Cell[194333, 4187, 404, 9, 21, "Message",ExpressionUUID->"d9209acf-a470-4905-9bcd-9b56be7b5059"],
+Cell[194740, 4198, 4117, 59, 126, "Message",ExpressionUUID->"51533afa-eb22-4bab-a99e-8e0d8479b66e"],
+Cell[198860, 4259, 4119, 59, 126, "Message",ExpressionUUID->"745c5793-1e86-4026-9568-8a6c0e2de457"],
+Cell[202982, 4320, 4119, 59, 126, "Message",ExpressionUUID->"7a8ab7fa-03bd-4ffe-8b69-4d2184710e11"],
+Cell[207104, 4381, 404, 9, 21, "Message",ExpressionUUID->"779ed4e3-703f-46cf-a8c0-ab3d40c4e963"]
 }, Open  ]],
-Cell[2309986, 39898, 1414, 35, 143, "Input",ExpressionUUID->"99b058c5-e953-441d-8d73-a5bfdf8ff83c"],
 Cell[CellGroupData[{
-Cell[2311425, 39937, 926, 26, 62, "Input",ExpressionUUID->"17b9132f-7b71-4803-a6f4-834f73f22551"],
-Cell[2312354, 39965, 172, 3, 46, "Output",ExpressionUUID->"24427b61-131f-4071-b3ff-7924b2326f65"]
+Cell[207545, 4395, 907, 26, 48, "Input",ExpressionUUID->"20c56d2c-2ab2-4140-b2d0-44c22d5b608b"],
+Cell[208455, 4423, 1615117, 27428, 424, 1133964, 19540, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"86a4950a-4f5d-4866-bc60-85cd63c37d11"]
 }, Open  ]],
-Cell[2312541, 39971, 152, 3, 28, "Input",ExpressionUUID->"a2641e66-f339-49ae-ad9b-dc7ba6b856e7"],
 Cell[CellGroupData[{
-Cell[2312718, 39978, 1193, 31, 157, "Input",ExpressionUUID->"95deaca1-85a0-47b7-b244-522509a6f55a"],
-Cell[2313914, 40011, 19305, 493, 617, "Output",ExpressionUUID->"d44fb38c-7469-4a87-a9ef-efa144b4158f"]
+Cell[1823609, 31856, 776, 21, 62, "Input",ExpressionUUID->"1b7d1109-de77-4952-86ec-5309ac3a1e7c"],
+Cell[1824388, 31879, 602719, 10213, 260, 488830, 8345, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"3032374f-ccb0-4eed-97da-91cf4216e899"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2427144, 42097, 563, 15, 42, "Input",ExpressionUUID->"48bbbb55-032f-44b8-af70-6fee25a9513c"],
+Cell[2427710, 42114, 4318, 84, 254, "Output",ExpressionUUID->"b2e38c90-13f0-4ba9-b198-c4cb00dfcab3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2432065, 42203, 612, 16, 42, "Input",ExpressionUUID->"ab7a69a2-6030-4267-b1d1-cbbee98c6ace"],
+Cell[2432680, 42221, 4334, 84, 254, "Output",ExpressionUUID->"67b7f4ee-aa5e-4ae2-9c6a-5681830208bd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2437051, 42310, 606, 16, 42, "Input",ExpressionUUID->"9de34bd8-72e6-4a17-8596-009b6f37e9c0"],
+Cell[2437660, 42328, 1538, 38, 256, "Output",ExpressionUUID->"1900932b-3cf0-4bf8-9001-e98e3dc469b8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2439235, 42371, 476, 14, 42, "Input",ExpressionUUID->"2876f56c-d3d9-4bd6-99cf-79f54d13cc9a"],
+Cell[2439714, 42387, 4882, 94, 272, "Output",ExpressionUUID->"3b12f9a1-946c-48e1-be04-fe84025c0081"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2444633, 42486, 175, 3, 42, "Input",ExpressionUUID->"1afa5874-3ab2-4a95-a124-c877f9200405"],
+Cell[2444811, 42491, 2468, 85, 85, "Output",ExpressionUUID->"8db322f9-67b5-4eef-bd9e-8f127205abcc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2447316, 42581, 419, 12, 62, "Input",ExpressionUUID->"04190449-3a95-4f2d-8366-eaae47ec291c"],
+Cell[2447738, 42595, 9671, 248, 149, "Output",ExpressionUUID->"cca73430-8d6a-4f99-887e-7ba54dd0b95d"]
+}, Open  ]],
+Cell[2457424, 42846, 1414, 35, 143, "Input",ExpressionUUID->"99b058c5-e953-441d-8d73-a5bfdf8ff83c"],
+Cell[CellGroupData[{
+Cell[2458863, 42885, 926, 26, 62, "Input",ExpressionUUID->"17b9132f-7b71-4803-a6f4-834f73f22551"],
+Cell[2459792, 42913, 172, 3, 46, "Output",ExpressionUUID->"24427b61-131f-4071-b3ff-7924b2326f65"]
+}, Open  ]],
+Cell[2459979, 42919, 152, 3, 28, "Input",ExpressionUUID->"a2641e66-f339-49ae-ad9b-dc7ba6b856e7"],
+Cell[CellGroupData[{
+Cell[2460156, 42926, 1193, 31, 157, "Input",ExpressionUUID->"95deaca1-85a0-47b7-b244-522509a6f55a"],
+Cell[2461352, 42959, 19305, 493, 617, "Output",ExpressionUUID->"d44fb38c-7469-4a87-a9ef-efa144b4158f"]
 }, Open  ]]
 }
 ]
