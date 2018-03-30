@@ -15,7 +15,7 @@ from itertools import groupby
 # Set up
 
 job_size = 1;
-runTime = r'08:00:00'
+runTime = r'10:00:00'
 shell_script_mode = True; # Generate shell scripts for commands or not.
                           # It helps when commands contain multiple single/double quotes.
 
@@ -75,9 +75,10 @@ def JobWriter(cmds,job_prefix):
         f.write(r'#$ -cwd'+"\n")
         f.write(r'#$ -r y'+"\n")
         f.write(r'#$ -j y'+"\n")
-        f.write(r'#$ -l mem_free=10G'+"\n")
+        f.write(r'#$ -l mem_free=12G'+"\n")
+        f.write(r'#$ -l xe5-2680v4=true'+"\n")
         f.write(r'#$ -l arch=linux-x64'+"\n")
-        f.write(r'#$ -l netapp=1G,scratch=1G'+"\n")
+        f.write(r'#$ -l netapp=100G,scratch=100G'+"\n")
         f.write(r'#$ -l h_rt='+runTime+"\n")
         f.write(r'#$ -t 1-'+str(len(cmds))+"\n")            
 

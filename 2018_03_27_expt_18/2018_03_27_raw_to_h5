@@ -1,0 +1,1543 @@
+# -*- coding: utf-8 -*-
+"""
+Input (hard-coded):
+1. Location of raw microscope images for Expt 18 (parent directory that contains "first_timecourse_636" and "second_timecourse_836" directories)
+2. Location of output directory
+3. Location of code directory
+
+This script does the following:
+1. Make a python and ImageJ script for each well, and make a master script that runs each well script)
+2. For each well,
+    Create an ImageJ script that processes the images (from both timecourse directories) as follows:
+        Open
+        Crop
+        Background subtract (Guassian blur for channel 1; rolling ball otherwise)
+        Downsample by 50%
+        Save as .tif into /raw_data
+    Run the ImageJ script
+3. In python,
+    Open images in /raw_data
+    Save all channels as h5 together (?)
+"""
+
+import os
+import sys
+import re
+# import vigra
+# import h5py
+
+
+def getImageJMacro(firstDir, secondDir, outputDir):
+    "This function returns the appropriate ImageJ Macro for a given well"
+    macroText = r"""// CHANNEL ONE, SITE 0000 ====================================================
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0000c1.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0000c1.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0000c1.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0000c1.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0000c1.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0000c1.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0000c1.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0000c1.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0000c1.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0000c1.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0000c1.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0000c1.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0000c1.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0000c1.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0000c1.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0000c1.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0000c1.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0000c1.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0000c1.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0000c1.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0000c1.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0000c1.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0000c1.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Duplicate...", "title=gaussblur duplicate");
+    run("Gaussian Blur...", "sigma=150 stack");
+    imageCalculator("Subtract create 32-bit stack", "Concatenated Stacks","gaussblur");
+    selectWindow("Result of Concatenated Stacks");
+    rename("channel_1_site_0000_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_1_site_0000_");    
+    run("16-bit");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_1_site_0000_000.tif");
+
+    run("Close All");
+
+    // CHANNEL TWO, SITE 0000 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0000c2.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0000c2.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0000c2.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0000c2.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0000c2.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0000c2.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0000c2.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0000c2.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0000c2.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0000c2.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0000c2.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0000c2.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0000c2.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0000c2.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0000c2.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0000c2.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0000c2.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0000c2.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0000c2.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0000c2.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0000c2.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0000c2.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0000c2.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_2_site_0000_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_2_site_0000_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_2_site_0000_000.tif");
+
+    run("Close All");
+
+    // CHANNEL THREE, SITE 0000 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0000c3.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0000c3.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0000c3.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0000c3.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0000c3.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0000c3.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0000c3.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0000c3.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0000c3.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0000c3.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0000c3.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0000c3.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0000c3.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0000c3.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0000c3.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0000c3.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0000c3.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0000c3.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0000c3.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0000c3.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0000c3.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0000c3.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0000c3.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_3_site_0000_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_3_site_0000_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_3_site_0000_000.tif");
+
+    run("Close All");
+
+    // CHANNEL FOUR, SITE 0000 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0000c4.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0000c4.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0000c4.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0000c4.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0000c4.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0000c4.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0000c4.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0000c4.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0000c4.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0000c4.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0000c4.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0000c4.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0000c4.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0000c4.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0000c4.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0000c4.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0000c4.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0000c4.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0000c4.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0000c4.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0000c4.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0000c4.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0000c4.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_4_site_0000_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_4_site_0000_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_4_site_0000_000.tif");
+
+    run("Close All");
+
+
+    // CHANNEL FIVE, SITE 0000 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0000c5.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0000c5.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0000c5.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0000c5.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0000c5.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0000c5.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0000c5.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0000c5.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0000c5.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0000c5.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0000c5.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0000c5.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0000c5.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0000c5.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0000c5.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0000c5.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0000c5.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0000c5.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0000c5.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0000c5.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0000c5.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0000c5.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0000c5.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_5_site_0000_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_5_site_0000_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_5_site_0000_000.tif");
+
+    run("Close All");
+
+
+    // CHANNEL ONE, SITE 0001 ====================================================
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0001c1.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0001c1.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0001c1.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0001c1.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0001c1.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0001c1.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0001c1.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0001c1.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0001c1.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0001c1.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0001c1.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0001c1.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0001c1.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0001c1.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0001c1.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0001c1.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0001c1.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0001c1.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0001c1.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0001c1.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0001c1.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0001c1.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0001c1.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Duplicate...", "title=gaussblur duplicate");
+    run("Gaussian Blur...", "sigma=150 stack");
+    imageCalculator("Subtract create 32-bit stack", "Concatenated Stacks","gaussblur");
+    selectWindow("Result of Concatenated Stacks");
+    rename("channel_1_site_0001_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_1_site_0001_");
+    run("16-bit");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_1_site_0001_000.tif");
+
+    run("Close All");
+
+    // CHANNEL TWO, SITE 0001 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0001c2.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0001c2.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0001c2.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0001c2.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0001c2.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0001c2.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0001c2.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0001c2.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0001c2.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0001c2.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0001c2.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0001c2.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0001c2.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0001c2.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0001c2.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0001c2.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0001c2.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0001c2.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0001c2.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0001c2.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0001c2.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0001c2.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0001c2.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_2_site_0001_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_2_site_0001_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_2_site_0001_000.tif");
+
+    run("Close All");
+
+    // CHANNEL THREE, SITE 0001 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0001c3.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0001c3.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0001c3.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0001c3.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0001c3.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0001c3.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0001c3.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0001c3.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0001c3.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0001c3.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0001c3.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0001c3.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0001c3.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0001c3.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0001c3.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0001c3.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0001c3.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0001c3.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0001c3.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0001c3.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0001c3.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0001c3.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0001c3.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_3_site_0001_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_3_site_0001_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_3_site_0001_000.tif");
+
+    run("Close All");
+
+    // CHANNEL FOUR, SITE 0001 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0001c4.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0001c4.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0001c4.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0001c4.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0001c4.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0001c4.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0001c4.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0001c4.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0001c4.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0001c4.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0001c4.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0001c4.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0001c4.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0001c4.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0001c4.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0001c4.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0001c4.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0001c4.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0001c4.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0001c4.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0001c4.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0001c4.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0001c4.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_4_site_0001_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_4_site_0001_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_4_site_0001_000.tif");
+
+    run("Close All");
+
+
+    // CHANNEL FIVE, SITE 0001 ====================================================
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t001.*0001c5.tif) sort");
+    rename("1");
+    makeRectangle(0, 147, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t002.*0001c5.tif) sort");
+    rename("2");
+    makeRectangle(5, 153, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t003.*0001c5.tif) sort");
+    rename("3");
+    makeRectangle(10, 156, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t004.*0001c5.tif) sort");
+    rename("4");
+    makeRectangle(14, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((00[5-9])|(0[1-6][0-9])|(07[0-7])).*0001c5.tif) sort");
+    rename("5");
+    makeRectangle(14, 159, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t078.*0001c5.tif) sort");
+    rename("6");
+    makeRectangle(210, 6, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t079.*0001c5.tif) sort");
+    rename("7");
+    makeRectangle(210, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t080.*0001c5.tif) sort");
+    rename("8");
+    makeRectangle(212, 0, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((08[1-9])|(09[0-9])|(1[0-3][0-9])|(14[0-2])).*0001c5.tif) sort");
+    rename("9");
+    makeRectangle(216, 4, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t143.*0001c5.tif) sort");
+    rename("10");
+    makeRectangle(198, 80, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t144.*0001c5.tif) sort");
+    rename("11");
+    makeRectangle(228, 84, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t145.*0001c5.tif) sort");
+    rename("12");
+    makeRectangle(250, 99, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t146.*0001c5.tif) sort");
+    rename("13");
+    makeRectangle(273, 116, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t147.*0001c5.tif) sort");
+    rename("14");
+    makeRectangle(289, 128, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t148.*0001c5.tif) sort");
+    rename("15");
+    makeRectangle(303, 140, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t149.*0001c5.tif) sort");
+    rename("16");
+    makeRectangle(313, 149, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t150.*0001c5.tif) sort");
+    rename("17");
+    makeRectangle(318, 154, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t151.*0001c5.tif) sort");
+    rename("18");
+    makeRectangle(323, 157, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t152.*0001c5.tif) sort");
+    rename("19");
+    makeRectangle(327, 160, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t153.*0001c5.tif) sort");
+    rename("20");
+    makeRectangle(329, 161, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t154.*0001c5.tif) sort");
+    rename("21");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+
+    run("Image Sequence...", "open={firstTimecourseDir} file=(.*t((15[5-9])|(1[6-9][0-9])|(20[0-9])|(21[0-6])).*0001c5.tif) sort");
+    rename("22");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Image Sequence...", "open={secondTimecourseDir} file=(.*t.*0001c5.tif) sort");
+    rename("23");
+    makeRectangle(331, 163, 2221, 1995);
+    run("Crop");
+
+    run("Concatenate...", "all_open title=[Concatenated Stacks]");
+    run("Subtract Background...", "rolling=100 stack");
+    rename("channel_5_site_0001_");
+    run("Scale...", "x=.5 y=.5 z=1.0 width=1110 height=997 depth=307 interpolation=Bilinear average process create title=channel_5_site_0001_");
+    run("Image Sequence... ", "format=TIFF digits=3 save={saveDir}/channel_5_site_0001_000.tif");
+
+    run("Close All");
+    """.format(firstTimecourseDir=firstDir, secondTimecourseDir=secondDir, saveDir=outputDir)
+    return macroText
+
+if __name__ == "__main__":
+    #specify parent directory containing wells.
+    sourceDirectory = '/awlab/users/jchang/plates/2018_03_05_expt018_SK_FUCCI'
+    targetDirectory = '/awlab/users/jchang/raw_data/2018_03_14_expt018_SK_FUCCI_dose_response'
+    codeDirectoryInput = '/awlab/users/jchang/code/2018_03_27_expt_18'
+
+    # sourceDirectory = 'E:\\temp'
+    # targetDirectory = 'E:\\temp\\saved'
+    # codeDirectoryInput = 'E:\\temp'
+
+
+    if not os.path.exists(targetDirectory):
+        os.makedirs(targetDirectory)
+    codeDirectory = os.path.join(codeDirectoryInput, 'temp_scripts')
+    if not os.path.exists(codeDirectory):
+        os.makedirs(codeDirectory)
+    print('this script will produce a master shell script in which each line processes one well.')
+    print('parent source directory to process: {}'.format(sourceDirectory))
+    print('code directory (where the script will be written): {}'.format(codeDirectory))
+
+
+    wellRegExp = re.compile(r'.*[A-H]\d\d.*')
+    wellNames = sorted([name for name in os.listdir(os.path.join(sourceDirectory,'second_timecourse_836')) if os.path.isdir(os.path.join(sourceDirectory, 'second_timecourse_836', name)) & bool(wellRegExp.match(name))])
+    master_script_path = os.path.join(codeDirectory, 'raw_to_h5_master_script_2018_03_27')
+    print('all well directories: {}'.format(wellNames))
+    print('master script path: {}'.format(master_script_path))
+
+
+    for counter, wellName in enumerate(wellNames):
+        subDirectoryTimeCourse1 = os.path.join(sourceDirectory, 'first_timecourse_636', wellName)
+        subDirectoryTimeCourse2 = os.path.join(sourceDirectory, 'second_timecourse_836', wellName)
+        targetSubDirectory = os.path.join(targetDirectory, wellName)
+        if not os.path.exists(targetSubDirectory):
+            os.makedirs(targetSubDirectory)
+        ijMacro = getImageJMacro(subDirectoryTimeCourse1, subDirectoryTimeCourse2, targetSubDirectory)
+        # print('writing this ImageJ macro:\n' + ijMacro)
+        print('writing ImageJ macro to {}'.format(r'/awlab/users/jchang/programs/Fiji.app/macros/tempMacro_2018_03_27_' + wellName + '.ijm'))
+        ijf = open(r'/awlab/users/jchang/programs/Fiji.app/macros/tempMacro_2018_03_27_' + wellName + '.ijm', 'w')
+        ijf.write(ijMacro)
+        ijf.close()
+        # Write a call to a separate python file that takes in the well as input and runs each ImageJ macro and combines the .tifs to HDF5
+        line_to_write=r'source activate py35 && export LD_LIBRARY_PATH=$HOME/glibc-2.14/lib && python ' + os.path.join(codeDirectoryInput,'2018_03_29_bgsubtract_copy_combine.py') + ' ' + wellName + ' ' + targetSubDirectory + ' && source deactivate\n'
+        if counter == 0:
+            f = open(master_script_path, 'w')
+            f.write(line_to_write)
+        else:
+            with open(master_script_path, 'a+') as f:
+                f.write(line_to_write)
+
+
+
