@@ -1069,9 +1069,9 @@ if __name__ == "__main__":
     wellNames = sorted([name for name in os.listdir(os.path.join(sourceDirectory,'second_timecourse_836')) if os.path.isdir(os.path.join(sourceDirectory, 'second_timecourse_836', name)) & bool(wellRegExp.match(name))])
 
     # Use this line to only run a few wells for testing:
-    # wellNames = wellNames[0:2]
+    wellNames = ['WellC08_Seq0009', 'WellD03_Seq0017', 'WellD06_Seq0020', 'WellD08_Seq0022']
 
-    master_script_path = os.path.join(codeDirectory, 'raw_to_h5_master_script_2018_03_27')
+    master_script_path = os.path.join(codeDirectory, 'raw_to_h5_master_script_2018_04_06')
     print('all well directories: {}'.format(wellNames))
     print('master script path: {}'.format(master_script_path))
 

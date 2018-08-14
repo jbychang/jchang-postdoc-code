@@ -15,7 +15,7 @@ from itertools import groupby
 # Set up
 
 job_size = 1;
-runTime = r'10:00:00'
+runTime = r'30:00:00'
 shell_script_mode = True; # Generate shell scripts for commands or not.
                           # It helps when commands contain multiple single/double quotes.
 

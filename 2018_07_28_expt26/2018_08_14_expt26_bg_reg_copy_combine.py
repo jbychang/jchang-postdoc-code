@@ -4,6 +4,11 @@ import vigra
 import h5py
 import re
 
+
+
+# In this experiment, I have three chunks of time courses: 
+
+
 if __name__ == "__main__":
     wellName = sys.argv[1]
     # well = os.path.basename(os.path.normpath(sourceDir))
